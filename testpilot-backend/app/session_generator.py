@@ -305,19 +305,23 @@ export default defineConfig({{
             duration_ms = int((time.time() - start) * 1000)
             success = proc.returncode == 0 and storage_file.exists()
 
+            # 归一化子进程输出：subprocess 可能返回 None，需避免下游 len()/拼接报错
+            stdout_text = proc.stdout or ""
+            stderr_text = proc.stderr or ""
+
             # 收集截图
             screenshots = []
             for pattern in ["*.png", "test-results/**/*.png", ".test-results/**/*.png"]:
                 screenshots.extend(str(p) for p in run_dir.glob(pattern))
 
-            error_info = None if success else self._extract_error(proc.stderr, proc.stdout)
-            
+            error_info = None if success else self._extract_error(stderr_text, stdout_text)
+
             result = {
                 "success": success,
                 "storageStatePath": storage_state_path if success else None,
                 "duration_ms": duration_ms,
-                "stdout": proc.stdout[-4000:] if len(proc.stdout) > 4000 else proc.stdout,
-                "stderr": proc.stderr[-4000:] if len(proc.stderr) > 4000 else proc.stderr,
+                "stdout": stdout_text[-4000:] if len(stdout_text) > 4000 else stdout_text,
+                "stderr": stderr_text[-4000:] if len(stderr_text) > 4000 else stderr_text,
                 "screenshots": screenshots,
                 "error": error_info,
             }
@@ -378,6 +382,9 @@ export default defineConfig({{
     @staticmethod
     def _extract_error(stderr: str, stdout: str) -> dict:
         """从输出中提取关键错误信息，并分类为选择器问题或其他问题"""
+        # 归一化：子进程输出可能为 None，避免拼接/切分报错
+        stderr = stderr or ""
+        stdout = stdout or ""
         full_output = stderr + "\n" + stdout
         lines = full_output.split("\n")
         
