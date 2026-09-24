@@ -1636,13 +1636,13 @@
       <div class="page active" id="page-dashboard">
         <div class="page-header">
           <div>
-            <div class="page-title">工作台概览</div>
-            <div class="page-subtitle">跨Project聚合视图 · 你有 3 个待评审任务, 2 个进行中的测试</div>
+            <div class="page-title">Workspace Overview</div>
+            <div class="page-subtitle">Cross-project overview · You have 3 pending review tasks and 2 running tests</div>
           </div>
           <div class="page-actions">
             <button class="btn btn-primary" onclick="openCreateProjectModal()">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              新建Project
+              New Project
             </button>
           </div>
         </div>
@@ -1650,14 +1650,14 @@
         <!-- Global Stats -->
         <div class="stats-grid">
           <div class="stat-card">
-            <div class="stat-label">活跃Project</div>
+            <div class="stat-label">Active Projects</div>
             <div class="stat-value primary" id="dash-project-count">-</div>
             <div class="stat-trend">
               <span style="color:var(--ink-3);" id="dash-project-detail">Loading...</span>
             </div>
           </div>
           <div class="stat-card">
-            <div class="stat-label">用例总数</div>
+            <div class="stat-label">Total Test Cases</div>
             <div class="stat-value primary" id="dash-total-cases">-</div>
             <div class="stat-trend">
               <span style="color:var(--ink-3);" id="dash-cases-detail">Loading...</span>
@@ -1671,10 +1671,10 @@
             </div>
           </div>
           <div class="stat-card">
-            <div class="stat-label">待评审</div>
+            <div class="stat-label">Pending Review</div>
             <div class="stat-value" style="color:var(--warning);" id="dash-pending-review">-</div>
             <div class="stat-trend">
-              <span style="color:var(--ink-3);">执行批次总数</span>
+              <span style="color:var(--ink-3);">Total execution batches</span>
             </div>
           </div>
         </div>
@@ -1682,8 +1682,8 @@
         <!-- Project Cards Grid -->
         <div class="panel" style="margin-bottom:16px;">
           <div class="panel-header">
-            <span class="panel-title">活跃Project</span>
-            <button class="btn btn-text btn-sm" onclick="switchPage('projects')">全部Project</button>
+            <span class="panel-title">Active Projects</span>
+            <button class="btn btn-text btn-sm" onclick="switchPage('projects')">All Projects</button>
           </div>
           <div class="panel-body">
             <div class="project-grid" id="dashboard-projects">
@@ -1695,7 +1695,7 @@
         <div class="dashboard-row">
           <div class="panel">
             <div class="panel-header">
-              <span class="panel-title">最近动态</span>
+              <span class="panel-title">Recent Activity</span>
               <button class="btn btn-text btn-sm">全部</button>
             </div>
             <div class="panel-body" id="dashboard-activity">
@@ -1704,7 +1704,7 @@
 
           <div class="panel">
             <div class="panel-header">
-              <span class="panel-title">待处理任务</span>
+              <span class="panel-title">Pending Tasks</span>
               <button class="btn btn-text btn-sm">全部</button>
             </div>
             <div class="panel-body" id="dashboard-tasks">
@@ -1717,20 +1717,20 @@
       <div class="page" id="page-projects">
         <div class="page-header">
           <div>
-            <div class="page-title">Project管理</div>
+            <div class="page-title">Project Management</div>
             <div class="page-subtitle">管理所有Test Project, 支持 Web, Mobile, API 不同维度的测试配置</div>
           </div>
           <div class="page-actions">
             <button class="btn btn-primary" onclick="openCreateProjectModal()">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              新建Project
+              New Project
             </button>
           </div>
         </div>
 
         <div class="panel">
           <div class="panel-header">
-            <span class="panel-title">Project列表</span>
+            <span class="panel-title">Project List</span>
             <div style="display:flex;gap:8px;">
               <select class="input-field" style="width:auto;padding:4px 12px;font-size:12px;">
                 <option>全部维度</option>
@@ -1739,7 +1739,7 @@
                 <option>API</option>
               </select>
               <select class="input-field" style="width:auto;padding:4px 12px;font-size:12px;">
-                <option>全部Status</option>
+                <option>All Statuses</option>
                 <option>进行中</option>
                 <option>空闲</option>
               </select>
@@ -1749,7 +1749,7 @@
           <div class="table-wrap">
             <table>
               <thead>
-                <tr><th style="width:36px;"><input type="checkbox" id="select-all-projects" onchange="toggleAllProjects(this.checked)"></th><th>Project Name</th><th>Test Scope</th><th>Cases</th><th>Pass Rate</th><th>Requirements</th><th>Last Activity</th><th>Status</th><th>Actions</th></tr>
+                <tr><th style="width:36px;"><input type="checkbox" id="select-all-projects" onchange="toggleAllProjects(this.checked)"></th><th>Project Name</th><th>Test Scope</th><th>Test Cases数</th><th>Pass Rate</th><th>Requirements数</th><th>Last Activity</th><th>Status</th><th>Actions</th></tr>
               </thead>
               <tbody id="project-table-body">
               </tbody>
@@ -1783,7 +1783,7 @@
       <div class="page" id="page-settings">
         <div class="page-header">
           <div>
-            <div class="page-title">系统Settings</div>
+            <div class="page-title">Settings</div>
             <div class="page-subtitle">Configure AI models, test accounts, and Feishu integration</div>
           </div>
         </div>
@@ -1933,8 +1933,8 @@
               <input type="text" class="input-field" id="project-name-input" placeholder="如：电商平台 V2.0" />
             </div>
             <div class="form-group">
-              <label class="input-label">Project描述（选填）</label>
-              <textarea class="input-field" id="project-desc-input" style="min-height:60px;" placeholder="简要描述Project背景和测试目标..."></textarea>
+              <label class="input-label">Project Description (optional)</label>
+              <textarea class="input-field" id="project-desc-input" style="min-height:60px;" placeholder="Briefly describe the project background and testing goals..."></textarea>
             </div>
             <div class="form-group">
               <label class="input-label">Test Scope</label>
@@ -1983,7 +1983,7 @@
 
             <!-- ===== Login State配置（New）===== -->
             <div class="form-group" style="border-top:1px solid var(--border);padding-top:16px;margin-top:8px;">
-              <label class="input-label">登录需求 *</label>
+              <label class="input-label">登录Requirements *</label>
               <div style="display:flex;gap:16px;margin-top:6px;flex-wrap:wrap;">
                 <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;">
                   <input type="radio" name="pc-login-requirement" value="no" checked onchange="toggleLoginRequirement(false)">
@@ -2108,7 +2108,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
           </div>
           <div class="modal-footer">
             <button class="btn btn-text" onclick="closeCreateProjectModal()">Cancel</button>
-            <button class="btn btn-primary" onclick="handleCreateProject()">创建Project</button>
+            <button class="btn btn-primary" onclick="handleCreateProject()">Create Project</button>
           </div>
         </div>
       </div>
@@ -2117,7 +2117,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
       <div class="modal-overlay" id="edit-project-modal" onclick="if(event.target===this)closeEditProjectModal()">
         <div class="modal">
           <div class="modal-header">
-            <span class="modal-title">编辑Project</span>
+            <span class="modal-title">Edit Project</span>
             <div class="modal-close" onclick="closeEditProjectModal()">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
             </div>
@@ -2130,8 +2130,8 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
               <input type="text" class="input-field" id="edit-project-name-input" placeholder="如：电商平台 V2.0" />
             </div>
             <div class="form-group">
-              <label class="input-label">Project描述（选填）</label>
-              <textarea class="input-field" id="edit-project-desc-input" style="min-height:60px;" placeholder="简要描述Project背景和测试目标..."></textarea>
+              <label class="input-label">Project Description (optional)</label>
+              <textarea class="input-field" id="edit-project-desc-input" style="min-height:60px;" placeholder="Briefly describe the project background and testing goals..."></textarea>
             </div>
             <div class="form-group">
               <label class="input-label">应用 URL</label>
@@ -2140,7 +2140,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
 
             <!-- ===== Login State配置（与创建表单一致）===== -->
             <div class="form-group" style="border-top:1px solid var(--border);padding-top:16px;margin-top:8px;">
-              <label class="input-label">登录需求 *</label>
+              <label class="input-label">登录Requirements *</label>
               <div style="display:flex;gap:16px;margin-top:6px;flex-wrap:wrap;">
                 <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;">
                   <input type="radio" name="ep-login-requirement" value="no" onchange="toggleEditLoginRequirement(false)">
@@ -2426,19 +2426,19 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
   let selectedReportIdx = -1;      // 当前选中的报告索引（-1 表示选最新）
   let confirmedLoginProfile = null;      // 当前已确认使用的Login State
   let loginProfilesLoaded = false;      // Login State列表是否已加载
-  let recentlyGeneratedCaseIds = [];    // 最近生成的Test CasesID列表, 用于跳转后自动勾选
+  let recentlyGeneratedCaseIds = [];    // 最近生成的test casesID列表, 用于跳转后自动勾选
 
   function initDefaultProjectData() {
     projectData = [
       {
-        name: '示例Project', dim: 'Web', color: 'var(--primary)', icon: '项',
+        name: 'Sample Project', dim: 'Web', color: 'var(--primary)', icon: 'P',
         feishuDoc: '',
         feishuUrl: '',
         reqText: '',
         codeSnippet: '',
         requirements: [],
         analysis: {
-          subtitle: '请输入Requirements Text或Feishu Document Link, 开始AI分析',
+          subtitle: '请输入Requirements Text或Feishu Document Link, Start AI Analysis',
           stats: { features: 0, estimated: '~0', risks: 0 },
           features: []
         },
@@ -2567,7 +2567,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
         ReviewEdit.checkDeepLink();
       }
       
-      // 自动勾选并定位到最近生成的Test Cases
+      // 自动勾选并定位到最近生成的test cases
       if (pageId === 'testcases' && recentlyGeneratedCaseIds.length > 0) {
         setTimeout(() => {
           selectAndScrollToGeneratedCases();
@@ -2633,7 +2633,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     app.classList.remove('sidebar-open');
   }
 
-  // 移动端：点击导航项后自动收起抽屉
+  // 移动端：点击导航P后自动收起抽屉
   navItems.forEach(item => {
     item.addEventListener('click', () => {
       switchPage(item.dataset.page);
@@ -2650,7 +2650,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
 
   function closeCreateProjectModal() {
     document.getElementById('create-project-modal').classList.remove('show');
-    // 重置登录需求为"无需登录", 避免下次打开残留
+    // 重置登录Requirements为"无需登录", 避免下次打开残留
     const noRadio = document.querySelector('input[name="pc-login-requirement"][value="no"]');
     if (noRadio) {
       noRadio.checked = true;
@@ -2658,7 +2658,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     }
   }
 
-  // ===== 登录需求单选切换（Project创建表单）=====
+  // ===== 登录Requirements单选切换（Project创建表单）=====
   function toggleLoginRequirement(needsLogin) {
     const area = document.getElementById('pc-login-config-area');
     if (area) area.style.display = needsLogin ? 'block' : 'none';
@@ -2736,7 +2736,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     const selectedDims = document.querySelectorAll('.dimension-option.selected');
     const dim = Array.from(selectedDims).map(d => d.dataset.dim).join('+');
 
-    // ===== 登录需求（防线1：表单强校验）=====
+    // ===== 登录Requirements（防线1：表单强校验）=====
     const needsLoginRadio = document.querySelector('input[name="pc-login-requirement"]:checked');
     const needsLogin = needsLoginRadio ? needsLoginRadio.value === 'yes' : false;
     let loginConfig = null;
@@ -2745,7 +2745,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
       const username = (document.getElementById('pc-lp-username') || {}).value?.trim() || '';
       const password = (document.getElementById('pc-lp-password') || {}).value?.trim() || '';
       if (!loginUrl || !username || !password) {
-        showToast('选择"需要登录"后, 登录页URL, 账号, 密码为必填项', 'warning');
+        showToast('选择"需要登录"后, 登录页URL, 账号, 密码为必填P', 'warning');
         return;
       }
       loginConfig = collectProjectLoginConfig();
@@ -2753,9 +2753,9 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
 
     const generateSessionNow = document.getElementById('pc-lp-generate-now')?.checked ?? false;
 
-    showLoading('创建Project中...');
+    showLoading('Create Project中...');
     try {
-      // 1. 创建Project（携带 requiresLogin）
+      // 1. Create Project（携带 requiresLogin）
       const created = await TestPilotAPI.createProject({
         name, description: desc, appUrl, dim,
         requiresLogin: needsLogin ? 1 : 0
@@ -2768,7 +2768,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
         try {
           profile = await TestPilotAPI.createLoginProfile(created.id, loginConfig);
         } catch (e) {
-          showToast(`Project已创建, 但Login State配置创建Failed：${e.message}`, 'warning');
+          showToast(`Project created, 但Login State配置创建Failed：${e.message}`, 'warning');
         }
 
         if (profile && generateSessionNow) {
@@ -2776,7 +2776,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
           showLoading('正在生成登录会话（Playwright 自动登录, 约10-30秒）...');
           try {
             await TestPilotAPI.generateLoginSession(profile.id);
-            showToast('Project创建成功, 登录会话Generated', 'success');
+            showToast('Project created successfully, 登录会话Generated', 'success');
           } catch (e) {
             const ok = window.confirm(`会话生成Failed：\n\n${e.message}\n\n是否现在去配置Login State选择器？`);
             if (ok) {
@@ -2784,18 +2784,18 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
                 try { showLoginConfig(); } catch (_) {}
               }, 500);
             }
-            showToast('Project已创建, 但会话生成Failed。请在「Login State配置」中检查选择器Settings。', 'warning');
+            showToast('Project created, 但会话生成Failed。请在「Login State配置」中检查选择器Settings。', 'warning');
           }
         } else if (profile) {
-          showToast('Project创建成功, 请稍后在「Login State配置」中生成会话', 'success');
+          showToast('Project created successfully, 请稍后在「Login State配置」中生成会话', 'success');
         }
       } else {
-        showToast('Project创建成功');
+        showToast('Project created successfully');
       }
 
       const colors = ['#1456F0', '#7B61FF', '#34C724', '#FF8800', '#00B8D9', '#8B5CF6', '#F54A45', '#10B981'];
       const firstChar = name.charAt(0);
-      const icon = firstChar.match(/[\u4e00-\u9fa5]/) ? firstChar : '项';
+      const icon = firstChar.match(/[\u4e00-\u9fa5]/) ? firstChar : 'P';
       const color = colors[projectData.length % colors.length];
 
       projectData.push({
@@ -2840,7 +2840,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     document.getElementById('edit-project-desc-input').value = data.description || '';
     document.getElementById('edit-project-app-url').value = data.appUrl || '';
 
-    // 回填登录需求单选
+    // 回填登录Requirements单选
     const requiresLogin = data.requiresLogin === undefined ? 1 : data.requiresLogin;
     const yesRadio = document.querySelector('input[name="ep-login-requirement"][value="yes"]');
     const noRadio = document.querySelector('input[name="ep-login-requirement"][value="no"]');
@@ -2945,7 +2945,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     document.getElementById('edit-project-modal').classList.remove('show');
   }
 
-  // 编辑表单：登录需求切换
+  // 编辑表单：登录Requirements切换
   function toggleEditLoginRequirement(needsLogin) {
     const area = document.getElementById('ep-login-config-area');
     if (area) area.style.display = needsLogin ? 'block' : 'none';
@@ -3013,7 +3013,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     const appUrl = document.getElementById('edit-project-app-url').value.trim();
     const projectId = projectData[idx].id;
 
-    // 登录需求
+    // 登录Requirements
     const needsLoginRadio = document.querySelector('input[name="ep-login-requirement"]:checked');
     const needsLogin = needsLoginRadio ? needsLoginRadio.value === 'yes' : false;
     let loginConfig = null;
@@ -3022,7 +3022,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
       const username = (document.getElementById('ep-lp-username') || {}).value?.trim() || '';
       const password = (document.getElementById('ep-lp-password') || {}).value?.trim() || '';
       if (!loginUrl || !username || !password) {
-        showToast('选择"需要登录"后, 登录页URL, 账号, 密码为必填项', 'warning');
+        showToast('选择"需要登录"后, 登录页URL, 账号, 密码为必填P', 'warning');
         return;
       }
       loginConfig = collectEditLoginConfig();
@@ -3059,7 +3059,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
             profileId = created.id;
           }
         } catch (e) {
-          showToast(`Project信息已保存, 但Login State配置更新Failed：${e.message}`, 'warning');
+          showToast(`Project information saved, 但Login State配置更新Failed：${e.message}`, 'warning');
         }
 
         // 3. 按需生成会话
@@ -3105,7 +3105,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     return `
       <div class="page-header">
         <div>
-          <div class="page-title">需求管理</div>
+          <div class="page-title">Requirements Management</div>
           <div class="page-subtitle">Enter a Feishu link, requirements text, or code. AI will analyze it and generate test cases.</div>
         </div>
       </div>
@@ -3125,7 +3125,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
           </div>` : ''}
         </div>
         <div id="tab-text" class="tab-content" style="display:none;">
-          <label class="input-label">需求描述</label>
+          <label class="input-label">Requirements描述</label>
           <textarea class="input-field" style="font-family:var(--font-mono);font-size:12px;min-height:160px;" placeholder="粘贴Requirements Text..."></textarea>
         </div>
         <div id="tab-code" class="tab-content" style="display:none;">
@@ -3135,20 +3135,20 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
         <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:16px;">
           <button class="btn btn-secondary">Cancel</button>
           <button class="btn btn-primary" onclick="handleStartAnalysisFlow()">
-            开始AI分析
+            Start AI Analysis
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </button>
         </div>
       </div>
       <div style="margin-top:20px;">
         <div class="panel-title" style="margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;">
-          <span>历史需求</span>
+          <span>Requirement History</span>
           ${reqs.length > 0 ? '<button class="btn btn-secondary btn-sm" onclick="handleBatchDeleteRequirements()" style="color:var(--danger);">Batch Delete</button>' : ''}
         </div>
         <div class="card">
           <div class="table-wrap">
             <table>
-              <thead><tr><th style="width:36px;">${reqs.length > 0 ? '<input type="checkbox" onchange="toggleAllRequirements(this.checked)">' : ''}</th><th>需求Title</th><th>Source</th><th>Status</th><th>生成用例</th><th>Created At</th><th>Actions</th></tr></thead>
+              <thead><tr><th style="width:36px;">${reqs.length > 0 ? '<input type="checkbox" onchange="toggleAllRequirements(this.checked)">' : ''}</th><th>Requirement Title</th><th>Source</th><th>Status</th><th>Generated Test Cases</th><th>Created At</th><th>Actions</th></tr></thead>
               <tbody>
                 ${reqs.length > 0 ? reqs.map((r, i) => `
                   <tr>
@@ -3159,7 +3159,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
                     <td>${r.cases}</td>
                     <td>${r.time}</td>
                     <td>
-                      <button class="btn btn-text btn-sm" onclick="switchPage('${r.status === '分析中' ? 'analysis' : 'testcases'}')">${r.status === '分析中' ? '查看进度' : '查看用例'}</button>
+                      <button class="btn btn-text btn-sm" onclick="switchPage('${r.status === '分析中' ? 'analysis' : 'testcases'}')">${r.status === '分析中' ? 'View进度' : 'ViewTest Cases'}</button>
                       <button class="btn btn-text btn-sm" onclick="handleDeleteRequirement(${i})" style="color:var(--danger);">Delete</button>
                     </td>
                   </tr>`).join('') : '<tr><td colspan="7" style="text-align:center;color:var(--ink-3);padding:20px;">No requirement history yet. Enter requirements text to start AI analysis.</td></tr>'}
@@ -3177,20 +3177,20 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     return `
       <div class="page-header">
         <div>
-          <div class="page-title">AI需求分析</div>
+          <div class="page-title">AIRequirements分析</div>
           <div class="page-subtitle">${a.subtitle}</div>
         </div>
         <div class="page-actions">
           <button class="btn btn-secondary" onclick="handleReanalyze()">重新分析</button>
-          <button class="btn btn-primary" onclick="handleGenerateTestcases()" ${!hasFeatures ? 'disabled style="opacity:0.6;cursor:not-allowed;"' : ''}>确认并生成用例</button>
+          <button class="btn btn-primary" onclick="handleGenerateTestcases()" ${!hasFeatures ? 'disabled style="opacity:0.6;cursor:not-allowed;"' : ''}>确认并Generated Test Cases</button>
         </div>
       </div>
       <div class="step-flow-bar">
-        <div class="flow-step"><div class="flow-step-dot done">1</div><span class="flow-step-label">需求输入</span></div>
+        <div class="flow-step"><div class="flow-step-dot done">1</div><span class="flow-step-label">Requirements输入</span></div>
         <div class="flow-line done"></div>
         <div class="flow-step"><div class="flow-step-dot ${hasFeatures ? 'done' : 'current'}">2</div><span class="flow-step-label ${hasFeatures ? '' : 'active'}">AI分析</span></div>
         <div class="flow-line ${hasFeatures ? 'done' : ''}"></div>
-        <div class="flow-step"><div class="flow-step-dot ${hasFeatures ? 'pending' : 'pending'}">3</div><span class="flow-step-label">用例生成</span></div>
+        <div class="flow-step"><div class="flow-step-dot ${hasFeatures ? 'pending' : 'pending'}">3</div><span class="flow-step-label">Test Cases生成</span></div>
         <div class="flow-line"></div>
         <div class="flow-step"><div class="flow-step-dot pending">4</div><span class="flow-step-label">稳定性保障</span></div>
         <div class="flow-line"></div>
@@ -3199,13 +3199,13 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
       ${!reqText ? `
       <div style="text-align:center;padding:60px 20px;">
         <div style="font-size:48px;margin-bottom:16px;">📋</div>
-        <div style="font-size:16px;color:var(--ink-2);margin-bottom:8px;">请先在需求页面输入Requirements Text</div>
-        <div style="font-size:13px;color:var(--ink-3);">需求分析需要基于您提供的需求文档进行</div>
-        <button class="btn btn-primary" onclick="switchPage('page-requirement')" style="margin-top:20px;">去输入需求</button>
+        <div style="font-size:16px;color:var(--ink-2);margin-bottom:8px;">请先在Requirements页面输入Requirements Text</div>
+        <div style="font-size:13px;color:var(--ink-3);">Requirements分析需要基于您提供的Requirements文档进行</div>
+        <button class="btn btn-primary" onclick="switchPage('page-requirement')" style="margin-top:20px;">去输入Requirements</button>
       </div>` : !hasFeatures ? `
       <div class="ai-thinking" style="margin-bottom:16px;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg>
-        AI正在深度解析需求文档...
+        AI正在深度解析Requirements文档...
         <div class="ai-thinking-dots"><span></span><span></span><span></span></div>
       </div>` : `
       <div class="ai-success" style="margin-bottom:16px;padding:12px 16px;background:var(--primary-light);border-radius:var(--radius-sm);display:flex;align-items:center;gap:8px;color:var(--primary);">
@@ -3215,7 +3215,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
       ${hasFeatures ? `
       <div class="stats-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:20px;">
         <div class="stat-card"><div class="stat-label">识别功能点</div><div class="stat-value primary">${a.stats.features}</div></div>
-        <div class="stat-card"><div class="stat-label">预估Cases</div><div class="stat-value">${a.stats.estimated}</div></div>
+        <div class="stat-card"><div class="stat-label">预估Test Cases数</div><div class="stat-value">${a.stats.estimated}</div></div>
         <div class="stat-card"><div class="stat-label">风险功能点</div><div class="stat-value" style="color:var(--warning);">${a.stats.risks}</div></div>
       </div>
       <div class="panel-title" style="margin-bottom:12px;">功能点列表</div>
@@ -3256,11 +3256,11 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
           <div class="page-actions"><button class="btn btn-primary" onclick="handleContinueToReview()">继续评审</button></div>
         </div>
         <div class="step-flow-bar">
-          <div class="flow-step"><div class="flow-step-dot done">1</div><span class="flow-step-label">需求输入</span></div>
+          <div class="flow-step"><div class="flow-step-dot done">1</div><span class="flow-step-label">Requirements输入</span></div>
           <div class="flow-line done"></div>
           <div class="flow-step"><div class="flow-step-dot done">2</div><span class="flow-step-label">AI分析</span></div>
           <div class="flow-line done"></div>
-          <div class="flow-step"><div class="flow-step-dot done">3</div><span class="flow-step-label">用例生成</span></div>
+          <div class="flow-step"><div class="flow-step-dot done">3</div><span class="flow-step-label">Test Cases生成</span></div>
           <div class="flow-line done"></div>
           <div class="flow-step"><div class="flow-step-dot current">4</div><span class="flow-step-label active">稳定性保障</span></div>
           <div class="flow-line"></div>
@@ -3278,16 +3278,16 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
         <div class="page-header">
           <div>
             <div class="page-title">脚本稳定性保障</div>
-            <div class="page-subtitle">AI生成脚本后自动进行5项Stability Check, 确保脚本可执行率 > 80%</div>
+            <div class="page-subtitle">AI生成脚本后自动进行5PStability Check, 确保脚本可执行率 > 80%</div>
           </div>
           <div class="page-actions"><button class="btn btn-primary" onclick="handleCheckStability()">开始检查</button></div>
         </div>
         <div class="step-flow-bar">
-          <div class="flow-step"><div class="flow-step-dot done">1</div><span class="flow-step-label">需求输入</span></div>
+          <div class="flow-step"><div class="flow-step-dot done">1</div><span class="flow-step-label">Requirements输入</span></div>
           <div class="flow-line done"></div>
           <div class="flow-step"><div class="flow-step-dot done">2</div><span class="flow-step-label">AI分析</span></div>
           <div class="flow-line done"></div>
-          <div class="flow-step"><div class="flow-step-dot done">3</div><span class="flow-step-label">用例生成</span></div>
+          <div class="flow-step"><div class="flow-step-dot done">3</div><span class="flow-step-label">Test Cases生成</span></div>
           <div class="flow-line done"></div>
           <div class="flow-step"><div class="flow-step-dot current">4</div><span class="flow-step-label active">稳定性保障</span></div>
           <div class="flow-line"></div>
@@ -3302,7 +3302,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
       <div class="page-header">
         <div>
           <div class="page-title">脚本稳定性保障</div>
-          <div class="page-subtitle">AI生成脚本后自动进行5项Stability Check, 确保脚本可执行率 > 80%</div>
+          <div class="page-subtitle">AI生成脚本后自动进行5PStability Check, 确保脚本可执行率 > 80%</div>
         </div>
         <div class="page-actions">
           <button class="btn btn-secondary" onclick="handleCheckStability()">重新检查</button>
@@ -3310,11 +3310,11 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
         </div>
       </div>
       <div class="step-flow-bar">
-        <div class="flow-step"><div class="flow-step-dot done">1</div><span class="flow-step-label">需求输入</span></div>
+        <div class="flow-step"><div class="flow-step-dot done">1</div><span class="flow-step-label">Requirements输入</span></div>
         <div class="flow-line done"></div>
         <div class="flow-step"><div class="flow-step-dot done">2</div><span class="flow-step-label">AI分析</span></div>
         <div class="flow-line done"></div>
-        <div class="flow-step"><div class="flow-step-dot done">3</div><span class="flow-step-label">用例生成</span></div>
+        <div class="flow-step"><div class="flow-step-dot done">3</div><span class="flow-step-label">Test Cases生成</span></div>
         <div class="flow-line done"></div>
         <div class="flow-step"><div class="flow-step-dot current">4</div><span class="flow-step-label active">稳定性保障</span></div>
         <div class="flow-line"></div>
@@ -3350,7 +3350,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
         </div>
       </div>
       <div style="margin-top:16px;">
-        <div class="panel-title" style="margin-bottom:8px;">每条用例的Stability Score</div>
+        <div class="panel-title" style="margin-bottom:8px;">每 test cases的Stability Score</div>
         <div class="card" style="padding:16px;">
           <div style="display:flex;flex-wrap:wrap;gap:6px;">
             ${scores.length > 0 ? scores.map(sc => {
@@ -3384,13 +3384,13 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
         </div>
         <div class="page-actions">
           <button class="btn btn-secondary" onclick="handleBatchExport()">Export Selected</button>
-          <button class="btn btn-secondary" onclick="handleBatchDelete()" style="color:var(--danger);">Delete已勾选用例</button>
+          <button class="btn btn-secondary" onclick="handleBatchDelete()" style="color:var(--danger);">Delete Selected Test Cases</button>
           <button class="btn btn-primary" onclick="handleCheckStability()">Stability Check</button>
         </div>
       </div>
       
       <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center;">
-        <input type="text" class="input-field" style="width:200px;" placeholder="搜索用例Title, 描述..." 
+        <input type="text" class="input-field" style="width:200px;" placeholder="Search test case title or description..." 
                value="${filters.keyword || ''}" oninput="handleSearchTestcases(this.value)">
                
         <select class="select-field" value="${filters.module || ''}" onchange="handleFilterTestcases('module', this.value)">
@@ -3405,14 +3405,14 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
         </select>
         
         <select class="select-field" value="${filters.status || ''}" onchange="handleFilterTestcases('status', this.value)">
-          <option value="">全部Status</option>
-          <option value="待评审">待评审</option>
+          <option value="">All Statuses</option>
+          <option value="Pending Review">Pending Review</option>
           <option value="Passed">Passed</option>
           <option value="Needs Update">Needs Update</option>
         </select>
         
         <div style="margin-left:auto;display:flex;gap:8px;align-items:center;">
-          <button class="btn btn-primary btn-sm" onclick="handleExecuteTests()">执行选中用例</button>
+          <button class="btn btn-primary btn-sm" onclick="handleExecuteTests()">Run Selected Test Cases</button>
         </div>
       </div>
       
@@ -3449,7 +3449,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
 
   function renderTestCaseCards(cases) {
     if (!cases || cases.length === 0) {
-      return '<div style="text-align:center;padding:40px;color:var(--ink-3);"><div style="font-size:48px;margin-bottom:16px;">📋</div><div>暂无Test Cases</div><div style="font-size:12px;margin-top:4px;">完成AI需求分析后自动生成Test Cases</div></div>';
+      return '<div style="text-align:center;padding:40px;color:var(--ink-3);"><div style="font-size:48px;margin-bottom:16px;">📋</div><div>暂无test cases</div><div style="font-size:12px;margin-top:4px;">完成AIRequirements分析后自动生成test cases</div></div>';
     }
     return cases.map(c => {
       const loginTag = getCaseLoginTag(c);
@@ -3462,7 +3462,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
           <span class="tag tag-gray">${c.module || '未分类'}</span>
           ${loginTag}
           <span class="tag tag-${c.scoreTag || 'gray'}">稳定性 ${c.score || 0}</span>
-          <span class="tag tag-${c.statusTag || 'warning'}">${c.status || '待评审'}</span>
+          <span class="tag tag-${c.statusTag || 'warning'}">${c.status || 'Pending Review'}</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="2" style="transition:transform .2s;"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
         ${c.expanded ? `
@@ -3477,20 +3477,20 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     }).join('');
   }
 
-  // 获取用例Status中文文本
+  // 获取Test CasesStatus中文文本
   function getCaseStatusText(status) {
     const statusMap = {
-      'pending': '待评审',
+      'pending': 'Pending Review',
       'passed': 'Passed',
       'failed': 'Needs Update',
       'review_passed': 'Passed',
       'needs_modification': 'Needs Update',
       'modified_pending_review': '已修改待复审'
     };
-    return statusMap[status] || status || '待评审';
+    return statusMap[status] || status || 'Pending Review';
   }
 
-  // 获取用例Status标签样式
+  // 获取Test CasesStatus标签样式
   function getCaseStatusTag(status) {
     const tagMap = {
       'pending': 'warning',
@@ -3503,7 +3503,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     return tagMap[status] || 'warning';
   }
 
-  // 获取用例Login State标签（用于卡片/列表显示）
+  // 获取Test CasesLogin State标签（用于卡片/列表显示）
   function getCaseLoginTag(c) {
     const mode = c.loginMode || 'global';
     if (mode === 'anonymous') return '<span class="tag tag-gray">[匿名]</span>';
@@ -3511,7 +3511,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     return '<span class="tag tag-gray">[Global]</span>';
   }
 
-  // 获取用例Login State描述文字（用于Details展开）
+  // 获取Test CasesLogin State描述文字（用于Details展开）
   function getCaseLoginDesc(c) {
     const mode = c.loginMode || 'global';
     if (mode === 'anonymous') return '匿名（不加载任何Login State）';
@@ -3519,7 +3519,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     return '跟随全局（使用执行中心当前确认的Login State）';
   }
 
-  // 用例Login State编辑弹窗
+  // Test CasesLogin State编辑弹窗
   async function showCaseLoginEditor(caseDbId) {
     const data = projectData[currentProjectIdx];
     if (!data.testcases) return;
@@ -3539,7 +3539,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
 
     modal.innerHTML = `
       <div style="background:var(--bg,#fff);border-radius:12px;padding:24px;max-width:440px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
-        <div style="font-size:16px;font-weight:700;margin-bottom:4px;">用例Login State绑定</div>
+        <div style="font-size:16px;font-weight:700;margin-bottom:4px;">Test CasesLogin State绑定</div>
         <div style="font-size:12px;color:var(--ink-3);margin-bottom:16px;">${caseItem.id || caseItem._id}: ${caseItem.title}</div>
         <div style="margin-bottom:12px;">
           <label style="display:block;font-size:12px;margin-bottom:6px;">Login State模式</label>
@@ -3567,13 +3567,13 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     document.body.appendChild(modal);
   }
 
-  // 切换用例Login State模式时显示/隐藏角色选择
+  // 切换Test CasesLogin State模式时显示/隐藏角色选择
   function toggleCaseLoginRoleSelect(mode) {
     const wrap = document.getElementById('case-login-role-wrap');
     if (wrap) wrap.style.display = (mode === 'specified') ? '' : 'none';
   }
 
-  // 保存用例Login State绑定
+  // 保存Test CasesLogin State绑定
   async function saveCaseLoginBinding(caseDbId) {
     const mode = document.getElementById('case-login-mode').value;
     const roleInput = document.getElementById('case-login-role');
@@ -3607,7 +3607,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
 
   function renderTestCaseList(cases, page = 1, pageSize = 10) {
     if (!cases || cases.length === 0) {
-      return '<div style="text-align:center;padding:40px;color:var(--ink-3);"><div style="font-size:48px;margin-bottom:16px;">📋</div><div>暂无Test Cases</div><div style="font-size:12px;margin-top:4px;">完成AI需求分析后自动生成Test Cases</div></div>';
+      return '<div style="text-align:center;padding:40px;color:var(--ink-3);"><div style="font-size:48px;margin-bottom:16px;">📋</div><div>暂无test cases</div><div style="font-size:12px;margin-top:4px;">完成AIRequirements分析后自动生成test cases</div></div>';
     }
     return `
       <div class="case-table-container">
@@ -3616,7 +3616,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
             <tr>
               <th></th>
               <th>ID</th>
-              <th>用例Title</th>
+              <th>Test CasesTitle</th>
               <th>Module</th>
               <th>Login State</th>
               <th>Priority</th>
@@ -3635,10 +3635,10 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
                 <td>${getCaseLoginTag(c)}</td>
                 <td><span class="tag tag-${c.priorityTag || 'gray'}">${c.priority || 'P1'}</span></td>
                 <td><span class="tag tag-${c.scoreTag || 'gray'}">${c.score || 0}</span></td>
-                <td><span class="tag tag-${c.statusTag || 'warning'}">${c.status || '待评审'}</span></td>
+                <td><span class="tag tag-${c.statusTag || 'warning'}">${c.status || 'Pending Review'}</span></td>
                 <td>
-                  <button class="btn btn-text btn-sm" onclick="toggleCaseExpand(${c._id})" title="查看Details">Details</button>
-                  <button class="btn btn-text btn-sm" onclick="toggleScriptExpand(${c._id})" title="查看/编辑脚本" style="padding:2px 6px;">
+                  <button class="btn btn-text btn-sm" onclick="toggleCaseExpand(${c._id})" title="ViewDetails">Details</button>
+                  <button class="btn btn-text btn-sm" onclick="toggleScriptExpand(${c._id})" title="View/编辑脚本" style="padding:2px 6px;">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="2" style="transition:transform .2s;transform:${c.scriptExpanded ? 'rotate(180deg)' : 'none'};"><polyline points="6 9 12 15 18 9"></polyline></svg>
                   </button>
                   <button class="btn btn-text btn-sm" onclick="showCaseLoginEditor(${c._dbId})">Login State</button>
@@ -3701,7 +3701,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 20px;">
           <div class="loading-ring"></div>
-          <div style="font-size:16px;color:var(--ink-2);margin-top:16px;">AI正在分析Test Cases质量...</div>
+          <div style="font-size:16px;color:var(--ink-2);margin-top:16px;">AI正在分析test cases质量...</div>
           <div style="font-size:13px;color:var(--ink-3);margin-top:4px;">预计需要30-60秒</div>
         </div>`;
     }
@@ -3727,8 +3727,8 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
             <div class="score-ring-text"><div class="score-num">${r.score}</div><div class="score-label">综合分</div></div>
           </div>
           <div>
-            <div style="font-size:16px;font-weight:700;color:var(--ink-1);margin-bottom:4px;">用例质量评估报告</div>
-            <div style="font-size:13px;color:var(--ink-2);">来自需求：${r.reqSource}</div>
+            <div style="font-size:16px;font-weight:700;color:var(--ink-1);margin-bottom:4px;">Test Cases质量评估报告</div>
+            <div style="font-size:13px;color:var(--ink-2);">来自Requirements：${r.reqSource}</div>
             <div style="font-size:12px;color:var(--ink-3);margin-top:4px;">评审时间：${r.time} · 模型：${r.model}</div>
             <div style="display:flex;gap:8px;margin-top:8px;">
               ${r.metrics.map(m => `<span class="tag tag-${m.tag}">${m.label}: ${m.value}</span>`).join('')}
@@ -3739,7 +3739,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
       <div class="panel-title" style="margin-bottom:12px;">改进建议（${r.suggestions.length}条）</div>
       ${r.suggestions.map((s, idx) => ReviewEdit.renderSuggestionCard(s, idx)).join('')}
       <div style="display:flex;justify-content:center;gap:12px;margin-top:20px;">
-        <button class="btn btn-secondary btn-lg" onclick="switchPage('testcases')">查看详细问题</button>
+        <button class="btn btn-secondary btn-lg" onclick="switchPage('testcases')">View详细问题</button>
         <button class="btn btn-primary btn-lg" onclick="openExecutionModal()">确认Passed, 去执行</button>
       </div>`;
   }
@@ -3765,13 +3765,13 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
       <div class="page-header">
         <div>
           <div class="page-title">执行中心</div>
-          <div class="page-subtitle">勾选用例 → 一键批量执行 → 实时查看进度</div>
+          <div class="page-subtitle">勾选Test Cases → 一键批量执行 → 实时View进度</div>
         </div>
         <div class="page-actions">
           <button class="btn btn-secondary" onclick="toggleExecLogs()">Execution Logs</button>
           <button class="btn btn-secondary" onclick="showLoginConfig()">Login State配置</button>
-          ${failItems.length > 0 && !isRunning ? `<button class="btn btn-warning" onclick="handleRerunFailed()">重跑Failed用例 (${failItems.length})</button>` : ''}
-          <button class="btn btn-primary" onclick="handleStartExecution()" ${isRunning || !confirmedLoginProfile ? 'disabled style="opacity:0.6;cursor:not-allowed;"' : ''}>${isRunning ? '执行中...' : (confirmedLoginProfile ? `执行选中用例 (${selected})` : '请先确认Login State')}</button>
+          ${failItems.length > 0 && !isRunning ? `<button class="btn btn-warning" onclick="handleRerunFailed()">重跑FailedTest Cases (${failItems.length})</button>` : ''}
+          <button class="btn btn-primary" onclick="handleStartExecution()" ${isRunning || !confirmedLoginProfile ? 'disabled style="opacity:0.6;cursor:not-allowed;"' : ''}>${isRunning ? '执行中...' : (confirmedLoginProfile ? `Run Selected Test Cases (${selected})` : '请先确认Login State')}</button>
         </div>
       </div>
 
@@ -3781,7 +3781,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
         <div>
           <div class="panel">
             <div class="panel-header">
-              <span class="panel-title">用例列表</span>
+              <span class="panel-title">Test Cases列表</span>
               <div style="display:flex;gap:8px;align-items:center;">
                 <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:12px;color:var(--ink-2);">
                   <input type="checkbox" class="checkbox" onchange="toggleSelectAllCases(this.checked)" ${items.length > 0 && items.every(i => i.checked) ? 'checked' : ''}>
@@ -3794,8 +3794,8 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
             <div id="exec-case-list" style="padding:8px;max-height:420px;overflow-y:auto;">
               ${items.length === 0 ? `
                 <div style="text-align:center;padding:40px 20px;color:var(--ink-3);">
-                  <div style="font-size:14px;margin-bottom:4px;">暂无用例</div>
-                  <div style="font-size:12px;">请先生成Test Cases</div>
+                  <div style="font-size:14px;margin-bottom:4px;">暂无Test Cases</div>
+                  <div style="font-size:12px;">请先生成test cases</div>
                 </div>
               ` : items.map((item, idx) => `
                 <div class="exec-item" data-idx="${idx}"${item.status === 'running' ? ' style="background:var(--primary-light);border-radius:var(--radius-sm);"' : ''}>
@@ -3806,7 +3806,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
                   <span class="tag tag-${item.statusTag || 'gray'}">${item.statusText || '等待'}</span>
                   ${item.duration ? `<span style="font-size:11px;color:var(--ink-3);">${item.duration}</span>` : ''}
                   ${item.screenshots && item.screenshots.length > 0 ? `
-                  <button onclick='showScreenshot(null, ${JSON.stringify(item.screenshots).replace(/'/g, "\\'")}, 0)' style="background:none;border:none;cursor:pointer;padding:4px;color:var(--primary);" title="查看Screenshot">
+                  <button onclick='showScreenshot(null, ${JSON.stringify(item.screenshots).replace(/'/g, "\\'")}, 0)' style="background:none;border:none;cursor:pointer;padding:4px;color:var(--primary);" title="ViewScreenshot">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
                   </button>` : ''}
                 </div>`).join('')}
@@ -3816,7 +3816,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
           ${failItems.length > 0 ? `
           <div class="panel" style="margin-top:16px;">
             <div class="panel-header">
-              <span class="panel-title">Failed Case Details (${failItems.length})</span>
+              <span class="panel-title">FailedTest CasesDetails (${failItems.length})</span>
               <button class="btn btn-text btn-sm" onclick="handleRerunFailed()" ${isRunning ? 'disabled' : ''}>Rerun All</button>
             </div>
             <div class="panel-body">
@@ -3868,11 +3868,11 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
             <button class="btn btn-primary" style="width:100%;margin-bottom:8px;" onclick="handleStartExecution()">开始执行</button>
             `}
             ${canViewReport ? `
-            <button class="btn btn-secondary" style="width:100%;margin-bottom:8px;" onclick="viewLatestReport()">查看报告</button>
+            <button class="btn btn-secondary" style="width:100%;margin-bottom:8px;" onclick="viewLatestReport()">View报告</button>
             ` : `
             <button class="btn btn-secondary" style="width:100%;margin-bottom:8px;opacity:0.5;cursor:not-allowed;" disabled title="Available after execution is completed and saved">${isRunning ? 'Running...' : 'No report'}</button>
             `}
-            ${failItems.length > 0 && !isRunning ? `<button class="btn btn-warning" style="width:100%;margin-bottom:8px;" onclick="handleRerunFailed()">重跑Failed用例 (${failItems.length})</button>` : ''}
+            ${failItems.length > 0 && !isRunning ? `<button class="btn btn-warning" style="width:100%;margin-bottom:8px;" onclick="handleRerunFailed()">重跑FailedTest Cases (${failItems.length})</button>` : ''}
           </div>
           <div style="margin-top:16px;padding-top:12px;border-top:1px solid var(--border);">
             <div style="font-size:11px;color:var(--ink-3);margin-bottom:4px;">执行引擎</div>
@@ -3999,7 +3999,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
         <!-- 右侧：报告Details -->
         <div id="report-detail-area">
           <div class="stats-grid">
-            <div class="stat-card"><div class="stat-label">总Cases</div><div class="stat-value">${current.total || 0}</div></div>
+            <div class="stat-card"><div class="stat-label">Total Test Cases</div><div class="stat-value">${current.total || 0}</div></div>
             <div class="stat-card"><div class="stat-label">Passed</div><div class="stat-value success">${current.passed || 0}</div></div>
             <div class="stat-card"><div class="stat-label">Failed</div><div class="stat-value danger">${current.failed || 0}</div></div>
             <div class="stat-card"><div class="stat-label">Pass Rate</div><div class="stat-value primary">${current.passRate}</div></div>
@@ -4062,7 +4062,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
             </div>
             <div class="table-wrap">
               <table>
-                <thead><tr><th>Case ID</th><th>Case Title</th><th>Result</th><th>Duration</th><th>Failure Reason</th><th>Screenshot</th></tr></thead>
+                <thead><tr><th>Test CasesID</th><th>Test CasesTitle</th><th>Result</th><th>Duration</th><th>Failure Reason</th><th>Screenshot</th></tr></thead>
                 <tbody>
                   ${items.length > 0 ? items.map((it, i) => {
                     const ss = Array.isArray(it.screenshots) ? it.screenshots : [];
@@ -4100,7 +4100,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
             <div class="panel-body" style="font-size:12px;color:var(--ink-2);">
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
                 <div><strong>Batch ID：</strong>${translateDisplayText(current.batchId)}</div>
-                <div><strong>执行Status：</strong>${current.status}</div>
+                <div><strong>Execution Status：</strong>${current.status}</div>
                 <div><strong>Start Time：</strong>${startTime}</div>
                 <div><strong>End Time：</strong>${finishTime}</div>
                 <div><strong>Total Duration：</strong>${duration}</div>
@@ -4112,16 +4112,16 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
       </div>`;
   }
 
-  // ===== 报告中心：Report History切换 =====
+  // ===== Report Center：Report History切换 =====
 
   function selectReport(idx) {
     selectedReportIdx = idx;
-    // 仅更新报告页面, 不刷新整个Project内容
+    // 仅更新报告页面, 不刷新整 projects内容
     const el = document.getElementById('page-report');
     if (el) el.innerHTML = renderReport(projectData[currentProjectIdx]);
   }
 
-  // ===== 报告中心：Export HTML =====
+  // ===== Report Center：Export HTML =====
 
   function exportReportHTML() {
     const reports = currentReportList;
@@ -4188,7 +4188,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
   </div>
 
   <div class="stats">
-    <div class="stat"><div class="stat-label">总Cases</div><div class="stat-value">${r.total || 0}</div></div>
+    <div class="stat"><div class="stat-label">Total Test Cases</div><div class="stat-value">${r.total || 0}</div></div>
     <div class="stat"><div class="stat-label">Passed</div><div class="stat-value pass">${r.passed || 0}</div></div>
     <div class="stat"><div class="stat-label">Failed</div><div class="stat-value fail">${r.failed || 0}</div></div>
     <div class="stat"><div class="stat-label">Pass Rate</div><div class="stat-value rate">${r.passRate}</div></div>
@@ -4197,7 +4197,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
   <div class="section">
     <div class="section-header">Execution Details</div>
     <table>
-      <thead><tr><th>Case ID</th><th>Case Title</th><th>Result</th><th>Duration</th><th>Failure Reason</th></tr></thead>
+      <thead><tr><th>Test CasesID</th><th>Test CasesTitle</th><th>Result</th><th>Duration</th><th>Failure Reason</th></tr></thead>
       <tbody>${itemsRows || '<tr><td colspan="5" style="text-align:center;color:#94a3b8;padding:20px;">暂无明细</td></tr>'}</tbody>
     </table>
   </div>
@@ -4207,7 +4207,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     <div class="section-body">
       <div class="info-grid">
         <div><strong>Batch ID：</strong>${translateDisplayText(r.batchId)}</div>
-        <div><strong>执行Status：</strong>${r.status}</div>
+        <div><strong>Execution Status：</strong>${r.status}</div>
         <div><strong>Start Time：</strong>${startTime}</div>
         <div><strong>End Time：</strong>${finishTime}</div>
         <div><strong>Total Duration：</strong>${duration}</div>
@@ -4232,7 +4232,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     showToast('报告已导出为HTML文件', 'success');
   }
 
-  // ===== 报告中心：Print PDF =====
+  // ===== Report Center：Print PDF =====
 
   function printReport() {
     const reports = currentReportList;
@@ -4251,7 +4251,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     if (headerEl) headerEl.style.display = '';
   }
 
-  // ===== 报告中心：Share Link =====
+  // ===== Report Center：Share Link =====
 
   function shareReport(executionId) {
     const url = `${location.origin}${location.pathname}?project=${currentProjectIdx}&page=report&exec=${executionId}#report`;
@@ -4347,7 +4347,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
           <td>${testcaseCount}</td>
           <td style="${passRate !== '—' ? 'color:var(--success);font-weight:600;' : 'color:var(--ink-3);'}">${passRate}</td>
           <td>${requirementCount}</td>
-          <td>${idx < 6 ? ['2 小时前', '5 小时前', '5 小时前', '8 小时前', '2 天前', '3 天前'][idx] : '刚刚'}</td>
+          <td>${idx < 6 ? ['2 小时前', '5 小时前', '5 小时前', '8 小时前', '2 天前', '3 天前'][idx] : 'Just now'}</td>
           <td><span class="project-status-dot ${status}"></span>${statusText}</td>
           <td>
             <button class="btn btn-text btn-sm" onclick="selectProject(${idx});switchPage('requirement')">进入</button>
@@ -4382,7 +4382,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
       projectData.splice(idx, 1);
       if (currentProjectIdx >= projectData.length) currentProjectIdx = Math.max(0, projectData.length - 1);
       renderProjectTable();
-      showToast('Project已Delete', 'success');
+      showToast('Project deleted', 'success');
     } catch (e) {
       showToast('DeleteProjectFailed: ' + e.message, 'danger');
     }
@@ -4394,7 +4394,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
       showToast('请先选择要Delete的Project', 'warning');
       return;
     }
-    if (!confirm(`确定要Delete选中的 ${checkedIdx.length} 个Project? This action cannot be undone.`)) return;
+    if (!confirm(`确定要Delete选中的 ${checkedIdx.length}  projects? This action cannot be undone.`)) return;
     let success = 0, fail = 0;
     for (let i = checkedIdx.length - 1; i >= 0; i--) {
       const idx = checkedIdx[i];
@@ -4409,10 +4409,10 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     }
     if (currentProjectIdx >= projectData.length) currentProjectIdx = Math.max(0, projectData.length - 1);
     renderProjectTable();
-    showToast(fail === 0 ? `已Delete ${success} 个Project` : `Delete完成：成功 ${success}, Failed ${fail}`, fail === 0 ? 'success' : 'warning');
+    showToast(fail === 0 ? `已Delete ${success}  projects` : `Delete完成：成功 ${success}, Failed ${fail}`, fail === 0 ? 'success' : 'warning');
   }
 
-  // ==================== 需求管理Batch Delete ====================
+  // ==================== Requirements ManagementBatch Delete ====================
   function toggleAllRequirements(checked) {
     const data = projectData[currentProjectIdx];
     if (!data || !data.requirements) return;
@@ -4431,14 +4431,14 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     const data = projectData[currentProjectIdx];
     if (!data || !data.requirements || !data.requirements[idx]) return;
     const r = data.requirements[idx];
-    if (!confirm(`确定要Delete需求"${r.title}"? This action cannot be undone.`)) return;
+    if (!confirm(`确定要DeleteRequirements"${r.title}"? This action cannot be undone.`)) return;
     try {
       if (r.id) await TestPilotAPI.deleteRequirement(r.id);
       data.requirements.splice(idx, 1);
       refreshProjectContent();
-      showToast('需求已Delete', 'success');
+      showToast('Requirements已Delete', 'success');
     } catch (e) {
-      showToast('Delete需求Failed: ' + e.message, 'danger');
+      showToast('DeleteRequirementsFailed: ' + e.message, 'danger');
     }
   }
 
@@ -4447,10 +4447,10 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
     if (!data || !data.requirements) return;
     const checkedIdx = data.requirements.map((r, i) => r.checked ? i : -1).filter(i => i >= 0);
     if (checkedIdx.length === 0) {
-      showToast('请先选择要Delete的需求', 'warning');
+      showToast('请先选择要Delete的Requirements', 'warning');
       return;
     }
-    if (!confirm(`确定要Delete选中的 ${checkedIdx.length} 条需求? This action cannot be undone.`)) return;
+    if (!confirm(`确定要Delete选中的 ${checkedIdx.length} 条Requirements? This action cannot be undone.`)) return;
     let success = 0, fail = 0;
     for (let i = checkedIdx.length - 1; i >= 0; i--) {
       const idx = checkedIdx[i];
@@ -4459,15 +4459,15 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
         data.requirements.splice(idx, 1);
         success++;
       } catch (e) {
-        console.error('Delete需求Failed:', data.requirements[idx].title, e);
+        console.error('DeleteRequirementsFailed:', data.requirements[idx].title, e);
         fail++;
       }
     }
     refreshProjectContent();
-    showToast(fail === 0 ? `已Delete ${success} 条需求` : `Delete完成：成功 ${success}, Failed ${fail}`, fail === 0 ? 'success' : 'warning');
+    showToast(fail === 0 ? `已Delete ${success} 条Requirements` : `Delete完成：成功 ${success}, Failed ${fail}`, fail === 0 ? 'success' : 'warning');
   }
 
-  // ==================== 报告中心Batch Delete ====================
+  // ==================== Report CenterBatch Delete ====================
   function toggleAllReports(checked) {
     if (!Array.isArray(currentReportList)) return;
     currentReportList.forEach(r => r.checked = checked);
@@ -4531,7 +4531,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });"></textarea>
 <script>
 /**
  * TestPilot API Service — 前后端集成
- * 连接 FastAPI 后端, 实现需求分析 → 用例生成 → 脚本执行的完整闭环
+ * 连接 FastAPI 后端, 实现Requirements分析 → Test Cases生成 → 脚本执行的完整闭环
  */
 
 const API_BASE = 'http://127.0.0.1:8001/api';
@@ -4620,7 +4620,7 @@ const TestPilotAPI = {
   async getProjects() {
     const res = await fetch(`${API_BASE}/projects`);
     if (!res.ok) {
-      throw new Error('获取Project列表Failed');
+      throw new Error('获取Project ListFailed');
     }
     return res.json();
   },
@@ -4681,7 +4681,7 @@ const TestPilotAPI = {
   async getRequirements(projectId) {
     const res = await fetch(`${API_BASE}/projects/${projectId}/requirements`);
     if (!res.ok) {
-      throw new Error('获取需求列表Failed');
+      throw new Error('获取Requirements列表Failed');
     }
     return res.json();
   },
@@ -4702,7 +4702,7 @@ const TestPilotAPI = {
   async getRequirement(reqId) {
     const res = await fetch(`${API_BASE}/requirements/${reqId}`);
     if (!res.ok) {
-      throw new Error('获取需求DetailsFailed');
+      throw new Error('获取RequirementsDetailsFailed');
     }
     return res.json();
   },
@@ -4735,7 +4735,7 @@ const TestPilotAPI = {
     
     const res = await fetch(url);
     if (!res.ok) {
-      throw new Error('获取Test CasesFailed');
+      throw new Error('获取test casesFailed');
     }
     return res.json();
   },
@@ -5004,7 +5004,7 @@ const TestPilotAPI = {
     const url = category ? `${API_BASE}/settings/${category}` : `${API_BASE}/settings`;
     const res = await fetch(url);
     if (!res.ok) {
-      throw new Error('获取系统SettingsFailed');
+      throw new Error('获取SettingsFailed');
     }
     return res.json();
   },
@@ -5258,14 +5258,14 @@ const TestPilotAPI = {
             if (data.type === 'complete') {
               result = data;
             } else if (data.type === 'error') {
-              throw new Error(data.message || 'Test Cases设计Failed');
+              throw new Error(data.message || 'test cases设计Failed');
             }
           }
         }
       }
       
       if (!result) {
-        throw new Error('Test Cases设计未返回Result');
+        throw new Error('test cases设计未返回Result');
       }
       
       console.log('[DEBUG] designTestcases API - result:', result);
@@ -5273,7 +5273,7 @@ const TestPilotAPI = {
     } catch (err) {
       console.log('[DEBUG] designTestcases API - catch error:', err);
       if (err.name === 'AbortError') {
-        throw new Error('Test Cases设计超时, 请稍后重试');
+        throw new Error('test cases设计超时, 请稍后重试');
       }
       throw err;
     } finally {
@@ -5491,13 +5491,13 @@ async function handleReanalyze() {
   }
 
   if (!currentAnalysisResult || !currentAnalysisResult.requirementId) {
-    showToast('请先完成一次需求分析', 'warning');
+    showToast('请先完成一次Requirements分析', 'warning');
     return;
   }
 
   const projectId = getCurrentProjectId();
   if (!projectId) {
-    showToast('当前Project未保存到后端', 'warning');
+    showToast('The current project has not been saved to the backend', 'warning');
     return;
   }
 
@@ -5505,26 +5505,26 @@ async function handleReanalyze() {
     const requirements = await TestPilotAPI.getRequirements(projectId);
     const req = requirements.find(r => r.id === currentAnalysisResult.requirementId);
     if (!req || !req.content) {
-      showToast('找不到对应的需求内容', 'warning');
+      showToast('找不到对应的Requirements内容', 'warning');
       return;
     }
 
     currentAnalysisResult = null;
     const projData = projectData[currentProjectIdx];
     projData.analysis = {
-      subtitle: 'AI正在重新分析需求...',
+      subtitle: 'AI正在重新分析Requirements...',
       stats: { features: 0, estimated: '~0', risks: 0 },
       features: []
     };
     refreshProjectContent();
 
-    showLoading('AI正在重新分析需求...');
+    showLoading('AI正在重新分析Requirements...');
     let charCount = 0;
     const updateLoadingText = () => {
       const dots = '.'.repeat((charCount % 5) + 1);
       const loadingEl = document.querySelector('.loading-overlay .loading-text');
       if (loadingEl) {
-        loadingEl.textContent = `AI正在重新分析需求${dots} (Generated ${charCount} 字符)`;
+        loadingEl.textContent = `AI正在重新分析Requirements${dots} (Generated ${charCount} 字符)`;
       }
     };
 
@@ -5543,7 +5543,7 @@ async function handleReanalyze() {
     refreshProjectContent();
 
     hideLoading();
-    showToast('需求重新分析完成！', 'success');
+    showToast('Requirements重新分析完成！', 'success');
   } catch (err) {
     hideLoading();
     showToast(`重新分析Failed: ${err.message}`, 'danger');
@@ -5566,27 +5566,27 @@ async function handleStartAnalysis() {
 
   const projectId = getCurrentProjectId();
   if (!projectId) {
-    showToast('当前Project未保存到后端, 无法持久化分析Result', 'warning');
+    showToast('The current project has not been saved to the backend, 无法持久化分析Result', 'warning');
   }
 
   currentAnalysisResult = null;
   isStartingNewAnalysis = true;
   const projData = projectData[currentProjectIdx];
   projData.analysis = {
-    subtitle: 'AI正在分析需求...',
+    subtitle: 'AI正在分析Requirements...',
     stats: { features: 0, estimated: '~0', risks: 0 },
     features: []
   };
   projData.reqText = reqText;
   refreshProjectContent();
 
-  showLoading('AI正在分析需求...');
+  showLoading('AI正在分析Requirements...');
   let charCount = 0;
   const updateLoadingText = () => {
     const dots = '.'.repeat((charCount % 5) + 1);
     const loadingEl = document.querySelector('.loading-overlay .loading-text');
     if (loadingEl) {
-      loadingEl.textContent = `AI正在分析需求${dots} (Generated ${charCount} 字符)`;
+      loadingEl.textContent = `AI正在分析Requirements${dots} (Generated ${charCount} 字符)`;
     }
   };
 
@@ -5611,15 +5611,15 @@ async function handleStartAnalysis() {
         currentAnalysisResult.requirementId = savedReq.id;
         await TestPilotAPI.saveRequirementAnalysis(savedReq.id, result);
         projectData[currentProjectIdx].lastRequirementId = savedReq.id;
-        console.log('需求与分析Result已持久化, requirementId=', savedReq.id);
+        console.log('Requirements与分析Result已持久化, requirementId=', savedReq.id);
       } catch (saveErr) {
-        console.warn('需求持久化Failed(不影响分析展示):', saveErr.message);
+        console.warn('Requirements持久化Failed(不影响分析展示):', saveErr.message);
       }
     }
 
     hideLoading();
     switchPage('analysis');
-    showToast('需求分析完成！', 'success');
+    showToast('Requirements分析完成！', 'success');
     isStartingNewAnalysis = false;
   } catch (err) {
     hideLoading();
@@ -5632,7 +5632,7 @@ async function handleStartAnalysis() {
 function updateAnalysisPage(result) {
   const data = projectData[currentProjectIdx];
   data.analysis = {
-    subtitle: 'AI已完成需求分析, 提取以下功能点',
+    subtitle: 'AI已完成Requirements分析, 提取以下功能点',
     stats: {
       features: result.feature_points.length,
       estimated: `~${result.estimated_case_count || result.feature_points.length * 3}`,
@@ -5654,11 +5654,11 @@ function updateAnalysisPage(result) {
 async function handleGenerateTestcases() {
   if (isProcessing) return;
   if (!currentAnalysisResult) {
-    showToast('请先进行需求分析', 'warning');
+    showToast('请先进行Requirements分析', 'warning');
     return;
   }
 
-  showLoading('AI正在设计Test Cases...');
+  showLoading('AI正在设计test cases...');
 
   try {
     const designResult = await TestPilotAPI.designTestcases(
@@ -5667,7 +5667,7 @@ async function handleGenerateTestcases() {
     const testCases = designResult.test_cases || [];
     
     if (testCases.length === 0) {
-      throw new Error('未生成任何Test Cases');
+      throw new Error('未生成任何test cases');
     }
 
     showLoading('AI正在生成测试脚本...');
@@ -5714,16 +5714,16 @@ async function handleGenerateTestcases() {
           });
           c._dbId = saved.id;
         }
-        console.log(`已持久化 ${result.cases.length} 条Test Cases`);
+        console.log(`已持久化 ${result.cases.length} 条test cases`);
       } catch (saveErr) {
-        console.warn('用例持久化Failed(不影响展示):', saveErr.message);
+        console.warn('Test Cases持久化Failed(不影响展示):', saveErr.message);
       }
     }
 
     updateTestcasesPage(result);
     hideLoading();
     switchPage('testcases');
-    showToast(`成功生成 ${result.cases.length} 条Test Cases！`, 'success');
+    showToast(`成功生成 ${result.cases.length} 条test cases！`, 'success');
   } catch (err) {
     hideLoading();
     showToast(`生成Failed: ${err.message}`, 'danger');
@@ -5746,7 +5746,7 @@ function updateTestcasesPage(result) {
     module: c.module || '未分类',
     score: c.stability_score || 80,
     scoreTag: (c.stability_score || 80) >= 90 ? 'success' : (c.stability_score || 80) >= 75 ? 'warning' : 'danger',
-    status: '待评审',
+    status: 'Pending Review',
     statusTag: 'warning',
     precondition: c.precondition,
     steps: Array.isArray(c.steps) ? c.steps.join('\n') : c.steps,
@@ -5772,7 +5772,7 @@ function updateTestcasesPage(result) {
     lastFilters: '{}'
   };
 
-  // 同步用例到执行中心
+  // 同步Test Cases到执行中心
   data.execution = {
     total: result.cases.length,
     selected: result.cases.length,
@@ -5811,7 +5811,7 @@ function toggleSelectAllCases(checked) {
   if (!data.execution || !data.execution.items) return;
   data.execution.items.forEach(item => { item.checked = checked; });
   data.execution.selected = checked ? data.execution.items.length : 0;
-  // 同步回用例库
+  // 同步回Test Cases库
   syncExecCheckedToTestCases(data);
   refreshProjectContent();
 }
@@ -5821,12 +5821,12 @@ function invertSelectCases() {
   if (!data.execution || !data.execution.items) return;
   data.execution.items.forEach(item => { item.checked = !item.checked; });
   data.execution.selected = data.execution.items.filter(i => i.checked).length;
-  // 同步回用例库
+  // 同步回Test Cases库
   syncExecCheckedToTestCases(data);
   refreshProjectContent();
 }
 
-// 将执行中心的勾选Status同步回用例库（按 _dbId 匹配）
+// 将执行中心的勾选Status同步回Test Cases库（按 _dbId 匹配）
 function syncExecCheckedToTestCases(data) {
   if (!data.testcases || !Array.isArray(data.testcases.cases) || !data.execution || !Array.isArray(data.execution.items)) return;
   const execCheckedMap = {};
@@ -5844,7 +5844,7 @@ function updateCaseSelection(idx, checked) {
   if (data.execution.items[idx]) {
     data.execution.items[idx].checked = checked;
     data.execution.selected = data.execution.items.filter(i => i.checked).length;
-    // 同步回用例库（按 _dbId 匹配）
+    // 同步回Test Cases库（按 _dbId 匹配）
     const execItem = data.execution.items[idx];
     if (execItem._dbId != null && data.testcases && Array.isArray(data.testcases.cases)) {
       const tcItem = data.testcases.cases.find(c => c._dbId === execItem._dbId);
@@ -5951,13 +5951,13 @@ function handleStopExecution() {
   refreshProjectContent();
 }
 
-// Failed用例Rerun All
+// FailedTest CasesRerun All
 async function handleRerunFailed() {
   const data = projectData[currentProjectIdx];
   if (!data.execution || !data.execution.items) return;
   const failedItems = data.execution.items.filter(i => i.status === 'fail');
   if (failedItems.length === 0) {
-    showToast('没有Failed的用例需要重跑', 'info');
+    showToast('没有Failed的Test Cases需要重跑', 'info');
     return;
   }
   await executeCases(failedItems, { isRerun: true });
@@ -5971,7 +5971,7 @@ async function handleContinueToReview() {
 
   const projectId = getCurrentProjectId();
   if (!projectId) {
-    showToast('请先选择Project', 'warning');
+    showToast('Please select a project first', 'warning');
     return;
   }
 
@@ -6031,7 +6031,7 @@ async function handleCheckStability() {
 
   const projectId = getCurrentProjectId();
   if (!projectId) {
-    showToast('请先选择Project', 'warning');
+    showToast('Please select a project first', 'warning');
     return;
   }
 
@@ -6127,7 +6127,7 @@ async function handleCheckStability() {
       try {
         await loadProjectTestCases(projectId);
       } catch (e) {
-        console.warn('同步Test Cases数据Failed:', e);
+        console.warn('同步test cases数据Failed:', e);
       }
     }
 
@@ -6215,7 +6215,7 @@ async function loadTestCasesWithFilters(forceRefresh = false) {
         steps: c.steps || [],
         expected: c.expected || '',
         script: c.script || '',
-        status: c.status || '待评审',
+        status: c.status || 'Pending Review',
         statusTag: c.status === 'Passed' ? 'success' : c.status === 'Needs Update' ? 'danger' : 'warning',
         score: c.stabilityScore || 0,
         scoreTag: c.stabilityScore >= 90 ? 'success' : c.stabilityScore >= 75 ? 'warning' : 'danger',
@@ -6238,7 +6238,7 @@ async function loadTestCasesWithFilters(forceRefresh = false) {
     
     refreshProjectContent();
   } catch (error) {
-    console.error('加载Test CasesFailed:', error);
+    console.error('加载test casesFailed:', error);
     showToast('Failed to load test cases. Please try again later.', 'danger');
   }
 }
@@ -6307,7 +6307,7 @@ async function saveCaseScript(caseId) {
 
   // 没有数据库 ID 时无法保存
   if (!caseItem._dbId) {
-    showToast('用例尚未持久化, 无法保存', 'warning');
+    showToast('Test Cases尚未持久化, 无法保存', 'warning');
     return;
   }
 
@@ -6325,7 +6325,7 @@ async function saveCaseScript(caseId) {
 
     if (res.status === 409) {
       hideLoading();
-      showToast('用例版本冲突, 请刷新用例库后重试', 'danger');
+      showToast('Test Cases版本冲突, 请刷新Test Cases库后重试', 'danger');
       return;
     }
     if (!res.ok) {
@@ -6379,10 +6379,10 @@ function toggleAllCases(checked) {
   const data = projectData[currentProjectIdx];
   if (!data.testcases) return;
 
-  // 仅切换当前页用例的勾选Status
+  // 仅切换当前页Test Cases的勾选Status
   data.testcases.cases.forEach(c => c.checked = checked);
 
-  // 同步当前页用例到执行中心
+  // 同步当前页Test Cases到执行中心
   const currentPageDbIds = {};
   data.testcases.cases.forEach(c => { if (c._dbId != null) currentPageDbIds[c._dbId] = true; });
 
@@ -6403,7 +6403,7 @@ async function handleBatchExport() {
   
   const checkedCases = data.testcases.cases.filter(c => c.checked);
   if (checkedCases.length === 0) {
-    showToast('请先选择要导出的用例', 'warning');
+    showToast('请先选择要导出的Test Cases', 'warning');
     return;
   }
   
@@ -6426,22 +6426,22 @@ async function handleBatchExport() {
   a.click();
   URL.revokeObjectURL(url);
   
-  showToast(`已导出 ${checkedCases.length} 条用例`, 'success');
+  showToast(`已导出 ${checkedCases.length}  test cases`, 'success');
 }
 
 async function handleBatchDelete() {
   const data = projectData[currentProjectIdx];
   if (!data.testcases) return;
 
-  // 收集所有页面中已勾选的用例
+  // 收集所有页面中已勾选的Test Cases
   const allCases = data.testcases.allCases || data.testcases.cases;
   const checkedCases = allCases.filter(c => c.checked);
   if (checkedCases.length === 0) {
-    showToast('请先选择要Delete的用例', 'warning');
+    showToast('请先选择要Delete的Test Cases', 'warning');
     return;
   }
 
-  if (!confirm(`确定要Delete选中的 ${checkedCases.length} 条用例? This action cannot be undone.`)) return;
+  if (!confirm(`确定要Delete选中的 ${checkedCases.length}  test cases? This action cannot be undone.`)) return;
 
   let successCount = 0;
   let failCount = 0;
@@ -6453,12 +6453,12 @@ async function handleBatchDelete() {
       successCount++;
       deletedIds.add(c._dbId || c._id);
     } catch (e) {
-      console.error('Delete用例Failed:', c.id, e);
+      console.error('DeleteTest CasesFailed:', c.id, e);
       failCount++;
     }
   }
 
-  // 更新 allCases 和 cases, 移除已Delete的用例
+  // 更新 allCases 和 cases, 移除已Delete的Test Cases
   if (data.testcases.allCases) {
     data.testcases.allCases = data.testcases.allCases.filter(c => !deletedIds.has(c._dbId || c._id));
   }
@@ -6482,7 +6482,7 @@ async function handleBatchDelete() {
   refreshProjectContent();
 
   if (failCount === 0) {
-    showToast(`已Delete ${successCount} 条用例`, 'success');
+    showToast(`已Delete ${successCount}  test cases`, 'success');
   } else {
     showToast(`Delete完成：成功 ${successCount} 条, Failed ${failCount} 条`, 'warning');
   }
@@ -6492,7 +6492,7 @@ async function handleDeleteTestCase(caseId) {
   const data = projectData[currentProjectIdx];
   if (!data.testcases) return;
 
-  if (!confirm('确定要Delete这条用例吗？')) return;
+  if (!confirm('确定要Delete这 test cases吗？')) return;
 
   try {
     const res = await fetch(`${API_BASE}/testcases/${caseId}`, {
@@ -6507,8 +6507,8 @@ async function handleDeleteTestCase(caseId) {
     refreshProjectContent();
     showToast('Delete成功', 'success');
   } catch (error) {
-    console.error('Delete用例Failed:', error);
-    showToast('Delete用例Failed, 请稍后重试', 'danger');
+    console.error('DeleteTest CasesFailed:', error);
+    showToast('DeleteTest CasesFailed, 请稍后重试', 'danger');
   }
 }
 
@@ -6541,7 +6541,7 @@ async function handleStartExecution() {
   }
   
   if (selectedItems.length === 0) {
-    showToast('请至少勾选一条用例', 'warning');
+    showToast('请至少勾选一 test cases', 'warning');
     return;
   }
 
@@ -6554,7 +6554,7 @@ async function handleStartExecution() {
   await executeCases(selectedItems, { isRerun: false });
 }
 
-// 解析单条用例使用的Login State profile
+// 解析单 test cases使用的Login State profile
 // 返回 { mode, name, storageStatePath, valid, reason, profile }
 function resolveItemProfile(item) {
   const mode = item.loginMode || 'global';
@@ -6610,9 +6610,9 @@ async function executeCases(itemsToRun, options = {}) {
 
   try {
 
-  // 初始化执行Status
+  // 初始化Execution Status
   if (!isRerun) {
-    // 全新执行：同步选中的用例到执行中心
+    // 全新执行：同步选中的Test Cases到执行中心
     if (!data.execution) {
       data.execution = { items: [] };
     }
@@ -6625,7 +6625,7 @@ async function executeCases(itemsToRun, options = {}) {
     data.execution.logs = [];
     data.execution.showLogs = true;
   } else {
-    // 重跑：仅重置Failed用例
+    // 重跑：仅重置FailedTest Cases
     itemsToRun.forEach(item => {
       item.status = 'pending';
       item.statusTag = 'gray';
@@ -6638,7 +6638,7 @@ async function executeCases(itemsToRun, options = {}) {
     data.execution.failed = 0;
     data.execution.running = 0;
     data.execution.waiting = itemsToRun.length;
-    addExecLog(`开始重跑 ${itemsToRun.length}  failed用例`, 'warn');
+    addExecLog(`开始重跑 ${itemsToRun.length}  failedTest Cases`, 'warn');
   }
 
   updateExecutionModal();
@@ -6662,7 +6662,7 @@ async function executeCases(itemsToRun, options = {}) {
   }
 
   // 记录执行开始日志
-  addExecLog(`开始执行测试, 共 ${itemsToRun.length} 条用例`, 'info');
+  addExecLog(`开始执行测试, 共 ${itemsToRun.length}  test cases`, 'info');
 
   // 加载Login State配置（基于已确认的全局Login State）
   let loginState = '未配置';
@@ -6678,10 +6678,10 @@ async function executeCases(itemsToRun, options = {}) {
   data.execution.loginState = loginState;
   updateExecutionRealtime();
 
-  // 解析每条用例使用的Login State profile
+  // 解析每 test cases使用的Login State profile
   const itemProfiles = itemsToRun.map(item => ({ item, ...resolveItemProfile(item) }));
 
-  // 预先标记 profile 失效的用例为跳过
+  // 预先标记 profile 失效的Test Cases为跳过
   let skippedCount = 0;
   itemProfiles.forEach(({ item, valid, reason }) => {
     if (!valid) {
@@ -6696,7 +6696,7 @@ async function executeCases(itemsToRun, options = {}) {
     }
   });
   if (skippedCount > 0) {
-    addExecLog(`共 ${skippedCount} 条用例因Login State失效被跳过`, 'warn');
+    addExecLog(`共 ${skippedCount}  test cases因Login State失效被跳过`, 'warn');
   }
 
   let allResults = [];
@@ -6710,7 +6710,7 @@ async function executeCases(itemsToRun, options = {}) {
       break;
     }
 
-    // 跳过失效用例（已预先标记）
+    // 跳过失效Test Cases（已预先标记）
     if (!valid) {
       processedCount++;
       continue;
@@ -6745,7 +6745,7 @@ async function executeCases(itemsToRun, options = {}) {
     try {
       const result = await TestPilotAPI.run(item.script || '', appUrl, null, storageStatePath);
 
-      // 更新用例Status
+      // 更新Test CasesStatus
       item.status = result.passed ? 'pass' : 'fail';
       item.statusTag = result.passed ? 'success' : 'danger';
       item.statusText = result.passed ? 'Passed' : 'Failed';
@@ -6850,21 +6850,21 @@ async function executeCases(itemsToRun, options = {}) {
       }));
       const report = await TestPilotAPI.saveTestReport(executionId, passRate, {}, {}, fails);
       addExecLog(`Report saved: #${report.id}, Pass Rate ${passRate}`, 'success');
-      // 记录本次执行ID, 供"查看报告"按钮使用
+      // 记录本次执行ID, 供"View报告"按钮使用
       data.execution.lastExecutionId = executionId;
     } catch (e) {
       addExecLog(`保存报告Failed: ${e.message}`, 'warn');
     }
   }
 
-  // 刷新Report History列表, 确保报告中心能看到本次Result
+  // 刷新Report History列表, 确保Report Center能看到本次Result
   try {
     const projData = projectData[currentProjectIdx];
     if (projData && projData.id) {
       const freshReports = await TestPilotAPI.getProjectReports(projData.id);
       currentReportList = Array.isArray(freshReports) ? freshReports : [];
       projData.reportList = currentReportList;
-      // 默认选中最新报告（列表第0项, 后端按时间倒序）
+      // 默认选中最新报告（列表第0P, 后端按时间倒序）
       selectedReportIdx = 0;
     }
   } catch (e) {
@@ -6902,13 +6902,13 @@ async function executeCases(itemsToRun, options = {}) {
 function openExecutionModal() {
   const data = projectData[currentProjectIdx];
   
-  // 同步用例库勾选Status到执行中心
+  // 同步Test Cases库勾选Status到执行中心
   if (data && data.testcases && data.testcases.cases && !isProcessing) {
     const tcChecked = data.testcases.cases.filter(c => c.checked);
     let execItems = [];
     
     if (tcChecked.length > 0) {
-      // 有勾选用例：只显示勾选用例, 且全部勾选
+      // 有勾选Test Cases：只显示勾选Test Cases, 且全部勾选
       execItems = tcChecked.map((c, idx) => ({
         id: `TC-${String(idx + 1).padStart(3, '0')}`,
         _dbId: c._dbId,
@@ -6925,10 +6925,10 @@ function openExecutionModal() {
         priority: c.priority,
       }));
     } else if (data.execution && data.execution.items && data.execution.items.length > 0) {
-      // 没有勾选用例但有执行历史：保持现状
+      // 没有勾选Test Cases但有执行历史：保持现状
       execItems = data.execution.items;
     } else if (data.testcases.cases.length > 0) {
-      // 没有勾选且无历史：显示全部用例, 全部勾选
+      // 没有勾选且无历史：显示全部Test Cases, 全部勾选
       execItems = data.testcases.cases.map((c, idx) => ({
         id: `TC-${String(idx + 1).padStart(3, '0')}`,
         _dbId: c._dbId,
@@ -7007,7 +7007,7 @@ function updateExecutionModal() {
   body.innerHTML = renderExecution(data);
 }
 
-// ===== 查看报告（执行中心入口） =====
+// ===== View报告（执行中心入口） =====
 
 function viewLatestReport() {
   // 关闭执行弹窗
@@ -7016,7 +7016,7 @@ function viewLatestReport() {
     execModal.classList.remove('show');
     setTimeout(() => execModal.remove(), 200);
   }
-  // 如果刚执行完, 选中最新报告（第0项）
+  // 如果刚执行完, 选中最新报告（第0P）
   if (currentReportList && currentReportList.length > 0) {
     selectedReportIdx = 0;
   }
@@ -7145,7 +7145,7 @@ async function showLoginConfirmDialog() {
   document.body.appendChild(modal);
 }
 
-// 选择某个Login State选项（单选高亮）
+// 选择某个Login State选P（单选高亮）
 function selectLoginProfileOption(profileId) {
   document.querySelectorAll('#login-confirm-options label').forEach(label => {
     label.style.borderColor = 'var(--border)';
@@ -7575,7 +7575,7 @@ async function showLoginConfig() {
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
         <div>
           <div style="font-size:18px;font-weight:700;">Login State配置</div>
-          <div style="font-size:12px;color:var(--ink-3);margin-top:4px;">每个Project最多5个Login State（4个可配置 + 1个匿名）, 执行测试前必须确认使用的Login State</div>
+          <div style="font-size:12px;color:var(--ink-3);margin-top:4px;">每 projects最多5个Login State（4个可配置 + 1个匿名）, 执行测试前必须确认使用的Login State</div>
         </div>
         <button class="btn btn-text" onclick="closeLoginConfigModal()" style="font-size:20px;padding:4px 8px;">×</button>
       </div>
@@ -7599,11 +7599,11 @@ async function showLoginConfig() {
   document.body.appendChild(modal);
 }
 
-// 关闭Login State管理面板：若下层"确认Login State"弹窗仍开着, 则重建以刷新选项列表
+// 关闭Login State管理面板：若下层"确认Login State"弹窗仍开着, 则重建以刷新选P列表
 function closeLoginConfigModal() {
   const modal = document.getElementById('login-profiles-modal');
   if (modal) modal.remove();
-  // Login State配置可能已变更, 重建"确认Login State"弹窗以加载最新选项
+  // Login State配置可能已变更, 重建"确认Login State"弹窗以加载最新选P
   if (document.getElementById('login-confirm-modal')) {
     showLoginConfirmDialog();
   }
@@ -7670,7 +7670,7 @@ function showLoginForm(profile) {
   const isEdit = !!profile;
   const data = profile || { name: '', role: '', username: '', password: '', validDays: 7, storageStatePath: '', isDefault: false };
 
-  // 选择器类型选项
+  // 选择器类型选P
   const selectorTypeOptions = (selected) => {
     return ['css', 'placeholder', 'locator'].map(t =>
       `<option value="${t}" ${selected === t ? 'selected' : ''}>${t === 'css' ? 'CSS选择器' : t === 'placeholder' ? 'placeholder文本' : 'Playwright locator'}</option>`
@@ -7802,7 +7802,7 @@ await page.waitForURL('**/dashboard**', { timeout: 10000 });">${data.customScrip
 async function saveLoginProfile(profileId) {
   const projectId = getCurrentProjectId();
   if (!projectId) {
-    showToast('未选择Project', 'warning');
+    showToast('No project selected', 'warning');
     return;
   }
   const name = document.getElementById('lp-name').value.trim();
@@ -7853,7 +7853,7 @@ async function saveLoginProfile(profileId) {
 async function removeLoginProfile(profileId) {
   const profile = loginProfilesCache.find(p => p.id === profileId);
   if (!profile) return;
-  if (!confirm(`确定要DeleteLogin State「${profile.name}」吗？\n绑定了该角色的用例将回退为"跟随全局"。`)) return;
+  if (!confirm(`确定要DeleteLogin State「${profile.name}」吗？\n绑定了该角色的Test Cases将回退为"跟随全局"。`)) return;
   try {
     await TestPilotAPI.deleteLoginProfile(profileId);
     showToast('Login State已Delete', 'success');
@@ -7941,7 +7941,7 @@ async function loadProjectFullData(projectId, index) {
     selectedReportIdx = -1;
 
     if (requirements.length > 0) {
-      // 统计每个需求关联的Cases（Passed requirementId 关联）
+      // 统计每个Requirements关联的Test Cases数（Passed requirementId 关联）
       const allCases = (testCases && testCases.items) ? testCases.items : [];
       projData.requirements = requirements.map(r => {
         const hasAnalysis = r.analysisResult && r.analysisResult.feature_points;
@@ -7975,7 +7975,7 @@ async function loadProjectFullData(projectId, index) {
           currentAnalysisResult = analysisResult;
           currentAnalysisResult.requirementId = reqWithAnalysis.id;
           projData.analysis = {
-            subtitle: 'AI已完成需求分析, 提取以下功能点',
+            subtitle: 'AI已完成Requirements分析, 提取以下功能点',
             stats: {
               features: analysisResult.feature_points.length,
               estimated: `~${analysisResult.estimated_case_count || analysisResult.feature_points.length * 3}`,
@@ -7993,7 +7993,7 @@ async function loadProjectFullData(projectId, index) {
           };
         } else {
           projData.analysis = {
-            subtitle: 'AI已完成需求分析, 提取以下功能点',
+            subtitle: 'AI已完成Requirements分析, 提取以下功能点',
             stats: {
               features: analysisResult.feature_points.length,
               estimated: `~${analysisResult.estimated_case_count || analysisResult.feature_points.length * 3}`,
@@ -8053,13 +8053,13 @@ async function loadProjectFullData(projectId, index) {
         lastFilters: '{}'
       };
 
-      // 同步用例到执行中心
+      // 同步Test Cases到执行中心
       const caseStatusMap = {
         'pending': { status: 'pending', statusTag: 'gray', statusText: '等待' },
         'passed': { status: 'pass', statusTag: 'success', statusText: 'Passed' },
         'failed': { status: 'fail', statusTag: 'danger', statusText: 'Failed' }
       };
-      // 从已加载的用例库中获取勾选Status（按 _dbId 匹配）, 默认不勾选以尊重用例库的选择
+      // 从已加载的Test Cases库中获取勾选Status（按 _dbId 匹配）, 默认不勾选以尊重Test Cases库的选择
       const existingCheckedMap = {};
       if (projData.testcases && Array.isArray(projData.testcases.cases)) {
         projData.testcases.cases.forEach(tc => {
@@ -8127,7 +8127,7 @@ async function loadProjectFullData(projectId, index) {
       const latestExec = executions[executions.length - 1];
       const latestReport = latestExec.id ? await TestPilotAPI.getExecutionReport(latestExec.id).catch(() => null) : null;
       
-      // 仅当执行记录包含有效 items 时才覆盖；否则保留从用例同步的 items, 仅更新统计
+      // 仅当执行记录包含有效 items 时才覆盖；否则保留从Test Cases同步的 items, 仅更新统计
       const hasValidItems = Array.isArray(latestExec.items) && latestExec.items.length > 0;
       const existingItems = (projData.execution && Array.isArray(projData.execution.items)) ? projData.execution.items : [];
       const itemsToUse = hasValidItems ? latestExec.items : existingItems;
@@ -8212,7 +8212,7 @@ function renderDashboardProjects() {
     container.innerHTML = `
       <div class="project-card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;border-style:dashed;border-color:var(--border-2);color:var(--ink-3);" onclick="openCreateProjectModal()">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-bottom:8px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-        <span style="font-size:13px;">新建Project</span>
+        <span style="font-size:13px;">New Project</span>
       </div>
     `;
     return;
@@ -8238,7 +8238,7 @@ function renderDashboardProjects() {
         <div class="pc-stats">
           <div class="pc-stat">
             <div class="pc-stat-value">${testcaseCount}</div>
-            <div class="pc-stat-label">用例</div>
+            <div class="pc-stat-label">Test Cases</div>
           </div>
           <div class="pc-stat">
             <div class="pc-stat-value" style="color:var(--success);">${passRate}</div>
@@ -8246,7 +8246,7 @@ function renderDashboardProjects() {
           </div>
           <div class="pc-stat">
             <div class="pc-stat-value">${requirementCount}</div>
-            <div class="pc-stat-label">需求</div>
+            <div class="pc-stat-label">Requirements</div>
           </div>
         </div>
       </div>
@@ -8254,7 +8254,7 @@ function renderDashboardProjects() {
   }).join('') + `
     <div class="project-card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;border-style:dashed;border-color:var(--border-2);color:var(--ink-3);" onclick="openCreateProjectModal()">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-bottom:8px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-      <span style="font-size:13px;">新建Project</span>
+      <span style="font-size:13px;">New Project</span>
     </div>
   `;
 }
@@ -8270,37 +8270,37 @@ function renderDashboardActivity() {
       const req = proj.requirements[0];
       if (req.status === '已完成') {
         activities.push({
-          title: `${translateDisplayText(proj.name)} — 创建需求 ${req.title}`,
-          time: req.time || '刚刚',
+          title: `${translateDisplayText(proj.name)} — created requirement ${req.title}`,
+          time: req.time || 'Just now',
           color: 'blue'
         });
       }
     }
     if (proj.testcases && proj.testcases.total > 0) {
       activities.push({
-        title: `${translateDisplayText(proj.name)} — 生成了 ${proj.testcases.total} 条Test Cases`,
-        time: '刚刚',
+        title: `${translateDisplayText(proj.name)} — generated ${proj.testcases.total} test cases`,
+        time: 'Just now',
         color: 'blue'
       });
     }
     if (proj.report && proj.report.passRate) {
       activities.push({
         title: `${translateDisplayText(proj.name)} — execution completed, pass rate ${proj.report.passRate}`,
-        time: proj.report.time || '刚刚',
+        time: proj.report.time || 'Just now',
         color: 'green'
       });
     }
     if (proj.review && proj.review.score) {
       activities.push({
         title: `${translateDisplayText(proj.name)} — AI review report generated, score ${proj.review.score}/100`,
-        time: proj.review.time || '刚刚',
+        time: proj.review.time || 'Just now',
         color: 'orange'
       });
     }
     if (proj.stability && proj.stability.total > 0) {
       activities.push({
         title: `${translateDisplayText(proj.name)} — stability check completed`,
-        time: '刚刚',
+        time: 'Just now',
         color: 'blue'
       });
     }
@@ -8331,22 +8331,22 @@ function renderDashboardTasks() {
   projectData.forEach(proj => {
     if (proj.review && proj.review.score === 0 && proj.testcases && proj.testcases.total > 0) {
       tasks.push({
-        title: `${translateDisplayText(proj.name)} — 待评审Test Cases`,
-        meta: `${proj.dim} · ${proj.testcases.total} 条用例`,
+        title: `${translateDisplayText(proj.name)} — test cases pending review`,
+        meta: `${proj.dim} · ${proj.testcases.total}  test cases`,
         priority: 'P1'
       });
     }
     if (proj.testcases && proj.testcases.total > 0) {
       tasks.push({
         title: `${translateDisplayText(proj.name)} — test cases pending execution`,
-        meta: `${proj.dim} · ${proj.testcases.total} 条用例`,
+        meta: `${proj.dim} · ${proj.testcases.total}  test cases`,
         priority: 'P2'
       });
     }
   });
   
   if (tasks.length === 0) {
-    container.innerHTML = `<div style="text-align:center;padding:20px;color:var(--ink-3);font-size:13px;">暂无待处理任务</div>`;
+    container.innerHTML = `<div style="text-align:center;padding:20px;color:var(--ink-3);font-size:13px;">暂无Pending Tasks</div>`;
     return;
   }
   
@@ -8359,7 +8359,7 @@ function renderDashboardTasks() {
           <div class="task-title">${task.title}</div>
           <div class="task-meta">${task.meta}</div>
         </div>
-        <button class="btn btn-text btn-sm" onclick="switchPage('review')">查看</button>
+        <button class="btn btn-text btn-sm" onclick="switchPage('review')">View</button>
       </div>
     `;
   }).join('');
@@ -8380,7 +8380,7 @@ async function checkBackendStatus() {
           
           projects.forEach((proj, index) => {
             const firstChar = translateDisplayText(proj.name).charAt(0);
-            const icon = firstChar.match(/[\u4e00-\u9fa5]/) ? firstChar : '项';
+            const icon = firstChar.match(/[\u4e00-\u9fa5]/) ? firstChar : 'P';
             const color = colors[index % colors.length];
             
             projectData.push({
@@ -8398,7 +8398,7 @@ async function checkBackendStatus() {
               codeSnippet: '',
               requirements: [],
               analysis: {
-                subtitle: '请输入Requirements Text或Feishu Document Link, 开始AI分析',
+                subtitle: '请输入Requirements Text或Feishu Document Link, Start AI Analysis',
                 stats: { features: 0, estimated: '~0', risks: 0 },
                 features: []
               },
@@ -8496,8 +8496,8 @@ let flowStepCompleted = [false, false, false, false];
 let flowStepRunning = false;
 let currentDesignedTestCases = [];
 const flowSteps = [
-  { id: 'analysis', title: 'AI需求分析', icon: '1' },
-  { id: 'testcases', title: 'Test Cases设计', icon: '2' },
+  { id: 'analysis', title: 'AIRequirements分析', icon: '1' },
+  { id: 'testcases', title: 'test cases设计', icon: '2' },
   { id: 'stability', title: '脚本生成及稳定性检测', icon: '3' },
   { id: 'review', title: 'AI Review', icon: '4' },
 ];
@@ -8510,8 +8510,8 @@ function openFlowModal() {
   body.innerHTML = `
     <div style="text-align:center;padding:40px;">
       <div style="font-size:48px;margin-bottom:16px;">📊</div>
-      <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">AI正在分析需求...</div>
-      <div style="font-size:12px;color:var(--ink-3);">请稍候, AI正在解析需求文档</div>
+      <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">AI正在分析Requirements...</div>
+      <div style="font-size:12px;color:var(--ink-3);">请稍候, AI正在解析Requirements文档</div>
       <div style="margin-top:12px;">
         <div class="progress-bar" style="width:200px;margin:0 auto;height:4px;background:var(--border);border-radius:2px;">
           <div class="progress-bar-fill" style="width:0%;background:var(--primary);transition:width .3s ease;"></div>
@@ -8713,8 +8713,8 @@ function renderAnalysisForModal(data) {
     return `
       <div style="text-align:center;padding:40px;">
         <div style="font-size:48px;margin-bottom:16px;">📊</div>
-        <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">AI正在分析需求...</div>
-        <div style="font-size:12px;color:var(--ink-3);">请稍候, AI正在解析需求文档</div>
+        <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">AI正在分析Requirements...</div>
+        <div style="font-size:12px;color:var(--ink-3);">请稍候, AI正在解析Requirements文档</div>
         <div style="margin-top:12px;">
           <div class="progress-bar" style="width:200px;margin:0 auto;height:4px;background:var(--border);border-radius:2px;">
             <div class="progress-bar-fill" style="width:0%;background:var(--primary);transition:width .3s ease;"></div>
@@ -8767,8 +8767,8 @@ function renderTestcasesForModal(data) {
     return `
       <div style="text-align:center;padding:40px;">
         <div style="font-size:48px;margin-bottom:16px;">📋</div>
-        <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">正在设计Test Cases...</div>
-        <div style="font-size:12px;color:var(--ink-3);">AI正在基于功能点设计Test Cases</div>
+        <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">正在设计test cases...</div>
+        <div style="font-size:12px;color:var(--ink-3);">AI正在基于功能点设计test cases</div>
       </div>
     `;
   }
@@ -8776,8 +8776,8 @@ function renderTestcasesForModal(data) {
   const cases = tc.cases;
   const summary = tc.summary || {};
 
-  // 按规则计算功能点覆盖率：一个功能点同时有正常流和异常流用例即为覆盖
-  // 优先使用 AI 返回的 coverage_matrix, 若无则按用例的 type/tags 字段推断
+  // 按规则计算功能点覆盖率：一个功能点同时有正常流和异常流Test Cases即为覆盖
+  // 优先使用 AI 返回的 coverage_matrix, 若无则按Test Cases的 type/tags 字段推断
   const totalFeatures = summary.total_feature_points || 0;
   let coveredFeatures = 0;
   const coverageMatrix = tc.coverage_matrix && tc.coverage_matrix.matrix ? tc.coverage_matrix.matrix : [];
@@ -8792,7 +8792,7 @@ function renderTestcasesForModal(data) {
       return dims.some(isNormal) && dims.some(isAbnormal);
     }).length;
   } else if (totalFeatures > 0 && cases.length > 0) {
-    // 兜底：按用例的 source_feature_id 和 type/tags 分组推断
+    // 兜底：按Test Cases的 source_feature_id 和 type/tags 分组推断
     const featureMap = {};
     cases.forEach(c => {
       const fid = c.source_feature_id || '';
@@ -8809,13 +8809,13 @@ function renderTestcasesForModal(data) {
     <div>
       <div class="ai-success" style="margin-bottom:16px;padding:12px 16px;background:var(--primary-light);border-radius:var(--radius-sm);display:flex;align-items:center;gap:8px;color:var(--primary);">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
-        Test Cases设计完成, 共 ${cases.length} 个用例
+        test cases设计完成, 共 ${cases.length} 个Test Cases
       </div>
 
       <div class="stats-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:16px;">
-        <div class="stat-card"><div class="stat-label">P0用例</div><div class="stat-value" style="color:var(--danger);">${summary.p0_cases || cases.filter(c => c.priority === 'P0').length}</div></div>
-        <div class="stat-card"><div class="stat-label">P1用例</div><div class="stat-value" style="color:var(--warning);">${summary.p1_cases || cases.filter(c => c.priority === 'P1').length}</div></div>
-        <div class="stat-card"><div class="stat-label">P2用例</div><div class="stat-value" style="color:var(--success);">${summary.p2_cases || cases.filter(c => c.priority === 'P2').length}</div></div>
+        <div class="stat-card"><div class="stat-label">P0Test Cases</div><div class="stat-value" style="color:var(--danger);">${summary.p0_cases || cases.filter(c => c.priority === 'P0').length}</div></div>
+        <div class="stat-card"><div class="stat-label">P1Test Cases</div><div class="stat-value" style="color:var(--warning);">${summary.p1_cases || cases.filter(c => c.priority === 'P1').length}</div></div>
+        <div class="stat-card"><div class="stat-label">P2Test Cases</div><div class="stat-value" style="color:var(--success);">${summary.p2_cases || cases.filter(c => c.priority === 'P2').length}</div></div>
       </div>
 
       <div style="max-height:50vh;overflow-y:auto;">
@@ -8874,7 +8874,7 @@ function renderStabilityForModal(data) {
   // Group issues by case title
   const issuesByCase = {};
   issues.forEach(i => {
-    const key = i.title || '未知用例';
+    const key = i.title || '未知Test Cases';
     if (!issuesByCase[key]) issuesByCase[key] = [];
     issuesByCase[key].push(i);
   });
@@ -8950,7 +8950,7 @@ function renderStabilityForModal(data) {
                   </div>
                 ` : '<div style="font-size:12px;color:var(--ink-3);">无稳定性问题</div>'}
               </div>`;
-          }).join('') : '<div style="text-align:center;color:var(--ink-3);padding:20px;">暂无用例评分数据</div>'}
+          }).join('') : '<div style="text-align:center;color:var(--ink-3);padding:20px;">暂无Test Cases评分数据</div>'}
         </div>
       </div>
     </div>
@@ -8964,7 +8964,7 @@ function renderReviewForModal(data) {
       <div style="text-align:center;padding:40px;">
         <div style="font-size:48px;margin-bottom:16px;">📝</div>
         <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">Generating AI review report...</div>
-        <div style="font-size:12px;color:var(--ink-3);">AI正在评估用例质量</div>
+        <div style="font-size:12px;color:var(--ink-3);">AI正在评估Test Cases质量</div>
       </div>
     `;
   }
@@ -9032,7 +9032,7 @@ async function handleStartAnalysisFlow() {
 
   const projectId = getCurrentProjectId();
   if (!projectId) {
-    showToast('当前Project未保存到后端, 请先创建Project', 'warning');
+    showToast('The current project has not been saved to the backend, 请先Create Project', 'warning');
     return;
   }
 
@@ -9040,7 +9040,7 @@ async function handleStartAnalysisFlow() {
   isStartingNewAnalysis = true;
   const projData = projectData[currentProjectIdx];
   projData.analysis = {
-    subtitle: 'AI正在分析需求...',
+    subtitle: 'AI正在分析Requirements...',
     stats: { features: 0, estimated: '~0', risks: 0 },
     features: []
   };
@@ -9062,7 +9062,7 @@ async function handleStartAnalysisFlow() {
         loadingEl.innerHTML = `
           <div style="text-align:center;padding:40px;">
             <div style="font-size:48px;margin-bottom:16px;">📊</div>
-            <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">AI正在分析需求${dots}</div>
+            <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">AI正在分析Requirements${dots}</div>
             <div style="font-size:12px;color:var(--ink-3);">Generated ${charCount} 字符</div>
             <div style="margin-top:12px;">
               <div class="progress-bar" style="width:200px;margin:0 auto;height:4px;background:var(--border);border-radius:2px;">
@@ -9085,13 +9085,13 @@ async function handleStartAnalysisFlow() {
 
     if (projectId) {
       try {
-        const title = reqText.slice(0, 30).replace(/\n/g, ' ').trim() || '需求分析';
+        const title = reqText.slice(0, 30).replace(/\n/g, ' ').trim() || 'Requirements分析';
         const savedReq = await TestPilotAPI.createRequirement(projectId, title, reqText);
         currentAnalysisResult.requirementId = savedReq.id;
         await TestPilotAPI.saveRequirementAnalysis(savedReq.id, result);
         projectData[currentProjectIdx].lastRequirementId = savedReq.id;
       } catch (saveErr) {
-        console.warn('需求持久化Failed:', saveErr.message);
+        console.warn('Requirements持久化Failed:', saveErr.message);
       }
     }
 
@@ -9196,7 +9196,7 @@ async function handleGenerateTestcasesForFlow() {
       if (progressPercent < 50) {
         statusEl.textContent = 'AI正在分析功能点, 设计测试场景...';
       } else {
-        statusEl.textContent = '正在生成结构化Test Cases...';
+        statusEl.textContent = '正在生成结构化test cases...';
       }
     }
   };
@@ -9204,7 +9204,7 @@ async function handleGenerateTestcasesForFlow() {
   body.innerHTML = `
     <div style="text-align:center;padding:40px;">
       <div style="font-size:48px;margin-bottom:16px;">📋</div>
-      <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">正在设计Test Cases...</div>
+      <div style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">正在设计test cases...</div>
       <div style="font-size:12px;color:var(--ink-3);" id="tc-gen-status">AI正在分析功能点, 设计测试场景...</div>
       <div style="margin-top:16px;width:200px;margin-left:auto;margin-right:auto;">
         <div class="progress-bar" style="height:6px;background:var(--border);border-radius:3px;">
@@ -9219,7 +9219,7 @@ async function handleGenerateTestcasesForFlow() {
 
   try {
     if (!currentAnalysisResult || !currentAnalysisResult.feature_points) {
-      throw new Error('需求分析Result不可用');
+      throw new Error('Requirements分析Result不可用');
     }
 
     const result = await TestPilotAPI.designTestcases(
@@ -9229,7 +9229,7 @@ async function handleGenerateTestcasesForFlow() {
     currentDesignedTestCases = result.test_cases || [];
 
     if (currentDesignedTestCases.length === 0) {
-      throw new Error('未生成任何Test Cases');
+      throw new Error('未生成任何test cases');
     }
 
     const allCases = currentDesignedTestCases.map((c, i) => ({
@@ -9322,7 +9322,7 @@ async function handleCheckStabilityForFlow() {
     }
     if (statusEl) {
       if (progressPercent < 50) {
-        statusEl.textContent = 'AI正在分析Test Cases, 生成Playwright脚本...';
+        statusEl.textContent = 'AI正在分析test cases, 生成Playwright脚本...';
       } else {
         statusEl.textContent = '正在进行稳定性检测...';
       }
@@ -9347,7 +9347,7 @@ async function handleCheckStabilityForFlow() {
 
   try {
     if (!currentDesignedTestCases || currentDesignedTestCases.length === 0) {
-      throw new Error('Test Cases数据不可用, 请先完成Test Cases设计');
+      throw new Error('test cases数据不可用, 请先完成test cases设计');
     }
 
     const result = await TestPilotAPI.generate(
@@ -9500,7 +9500,7 @@ async function handleGenerateReviewForFlow() {
     <div style="text-align:center;padding:40px;">
       <div style="font-size:48px;margin-bottom:16px;">📝</div>
       <div id="review-loading-text" style="font-size:14px;color:var(--ink-2);margin-bottom:8px;">Generating AI review report...</div>
-      <div style="font-size:12px;color:var(--ink-3);">AI正在评估用例质量（需求覆盖度, 场景完整性, 可执行性）</div>
+      <div style="font-size:12px;color:var(--ink-3);">AI正在评估Test Cases质量（Requirements覆盖度, 场景完整性, 可执行性）</div>
       <div style="margin-top:16px;display:flex;justify-content:center;gap:6px;">
         <div class="loading-dot" style="width:8px;height:8px;border-radius:50%;background:var(--primary);animation:loadingPulse 1.4s infinite ease-in-out;"></div>
         <div class="loading-dot" style="width:8px;height:8px;border-radius:50%;background:var(--primary);animation:loadingPulse 1.4s infinite ease-in-out 0.2s;"></div>
@@ -9532,7 +9532,7 @@ async function handleGenerateReviewForFlow() {
 }
 </script>
 
-<!-- ==================== ReviewEdit: AI Review建议跳转用例库人工修改 ==================== -->
+<!-- ==================== ReviewEdit: AI Review建议跳转Test Cases库人工修改 ==================== -->
 <script>
 /**
  * ReviewEdit 命名空间
@@ -9549,7 +9549,7 @@ const ReviewEdit = (function() {
 
   // 字段路径中文映射
   const FIELD_LABELS = {
-    title: '用例Title',
+    title: 'Test CasesTitle',
     precondition: '前置条件',
     steps: 'Actions步骤',
     expected_result: '预期Result',
@@ -9571,7 +9571,7 @@ const ReviewEdit = (function() {
     boundary_missing: '边界缺失',
     assertion_weak: '断言薄弱',
     script_risk: '脚本风险',
-    duplicate_case: '用例重复',
+    duplicate_case: 'Test Cases重复',
   };
 
   // ==================== 1. 建议卡片渲染 ====================
@@ -9597,7 +9597,7 @@ const ReviewEdit = (function() {
         <div class="sug-header">
           ${issueLabel ? `<span class="tag tag-field-path">${issueLabel}</span>` : ''}
           <span class="tag ${sevCls}">严重度: ${sevText}</span>
-          <span class="sug-title">建议#${idx + 1} · ${caseId ? `<a onclick="ReviewEdit.jumpToCase('${caseId}','${suggestionId}','${fieldPath[0] || ''}')" title="跳转到用例编辑">${escapeHtmlStr(caseTitle)}</a>` : escapeHtmlStr(caseTitle)}</span>
+          <span class="sug-title">建议#${idx + 1} · ${caseId ? `<a onclick="ReviewEdit.jumpToCase('${caseId}','${suggestionId}','${fieldPath[0] || ''}')" title="跳转到Test Cases编辑">${escapeHtmlStr(caseTitle)}</a>` : escapeHtmlStr(caseTitle)}</span>
           <span class="tag tag-${statusInfo.cls} tag-suggestion-status" style="margin-left:auto;">${statusInfo.text}</span>
         </div>
         <div class="sug-body">
@@ -9654,10 +9654,10 @@ const ReviewEdit = (function() {
     handleDirectedEdit(link);
   }
 
-  // ==================== 3. 跳转到用例编辑 ====================
+  // ==================== 3. 跳转到Test Cases编辑 ====================
   async function jumpToCase(caseId, suggestionId, focus) {
     if (!caseId) {
-      showToast('该建议未关联具体用例, 无法跳转', 'warning');
+      showToast('该建议未关联具体Test Cases, 无法跳转', 'warning');
       return;
     }
     // 尝试更新建议Status为 editing
@@ -9676,7 +9676,7 @@ const ReviewEdit = (function() {
     const reviewId = _getCurrentReviewId();
     const hash = buildDeepLink(caseId, reviewId, suggestionId, focus);
     window.location.hash = hash;
-    // 切换到用例库页
+    // 切换到Test Cases库页
     switchPage('testcases');
   }
 
@@ -9688,28 +9688,28 @@ const ReviewEdit = (function() {
       return;
     }
 
-    // Settings搜索关键词定位用例
+    // Settings搜索关键词定位Test Cases
     data.testcases.filters = data.testcases.filters || {};
     data.testcases.filters.keyword = '';
     refreshProjectContent();
 
-    // 从后端获取用例Details（含版本号和关联建议）
+    // 从后端获取Test CasesDetails（含版本号和关联建议）
     try {
       const url = `${API_BASE}/cases/${link.caseId}` + (link.suggestionId ? `?suggestionId=${encodeURIComponent(link.suggestionId)}` : '');
       const res = await fetch(url);
       if (!res.ok) {
         if (res.status === 404) {
-          showToast('该用例已不存在, 可能已被Delete', 'danger');
+          showToast('该Test Cases已不存在, 可能已被Delete', 'danger');
           clearDeepLink();
           _isLoadingCase = false;
           return;
         }
-        throw new Error('获取用例Failed');
+        throw new Error('获取Test CasesFailed');
       }
       const caseData = await res.json();
       _isLoadingCase = false;
 
-      // 展开用例卡片
+      // 展开Test Cases卡片
       _expandAndScrollToCase(caseData.id);
 
       // 打开编辑抽屉
@@ -9724,7 +9724,7 @@ const ReviewEdit = (function() {
 
     } catch (err) {
       console.error('定向编辑加载Failed:', err);
-      showToast('加载用例Failed, 请稍后重试', 'danger');
+      showToast('Failed to load test cases. Please try again later.', 'danger');
       _isLoadingCase = false;
       clearDeepLink();
     }
@@ -9746,7 +9746,7 @@ const ReviewEdit = (function() {
         }
       }, 200);
     }
-    // 用例不在当前列表页时, 不做展开Actions, 直接由 openEditDrawer 处理
+    // Test Cases不在当前列表页时, 不做展开Actions, 直接由 openEditDrawer 处理
   }
 
   // ==================== 5. 编辑抽屉 ====================
@@ -9803,7 +9803,7 @@ const ReviewEdit = (function() {
     const buf = _editBuffer;
     return `
       <div class="edit-drawer-header">
-        <span class="tag tag-primary">编辑用例</span>
+        <span class="tag tag-primary">编辑Test Cases</span>
         <span style="font-size:14px;font-weight:600;flex:1;">#${caseData.id} ${escapeHtmlStr(caseData.title || '')}</span>
         <span class="tag tag-gray">v${buf.version}</span>
         <button class="btn btn-text btn-sm" onclick="ReviewEdit.closeEditDrawer()" style="font-size:18px;padding:4px 8px;">&times;</button>
@@ -9811,7 +9811,7 @@ const ReviewEdit = (function() {
       <div class="edit-drawer-body">
         ${currentSuggestion ? _renderSuggestionContext(currentSuggestion) : ''}
         <div class="drawer-form-group" id="drawer-field-title">
-          <label>用例Title</label>
+          <label>Test CasesTitle</label>
           <input type="text" id="edit-field-title" value="${escapeHtmlStr(buf.title)}" oninput="ReviewEdit.markDirty()">
         </div>
         <div class="drawer-form-group" id="drawer-field-precondition">
@@ -9970,7 +9970,7 @@ const ReviewEdit = (function() {
 
     // 基本校验
     if (!_editBuffer.title.trim()) {
-      showToast('用例Title不能为空', 'warning');
+      showToast('Test CasesTitle不能为空', 'warning');
       return;
     }
     if (!_editBuffer.expected.trim()) {
@@ -10003,17 +10003,17 @@ const ReviewEdit = (function() {
       if (res.status === 409) {
         hideLoading();
         const err = await res.json().catch(() => ({}));
-        showToast('用例版本冲突, 请刷新后重试', 'danger');
+        showToast('Test Cases版本冲突, 请刷新后重试', 'danger');
         return;
       }
       if (res.status === 403) {
         hideLoading();
-        showToast('你没有编辑该用例的权限', 'danger');
+        showToast('你没有编辑该Test Cases的权限', 'danger');
         return;
       }
       if (res.status === 423) {
         hideLoading();
-        showToast('该用例正在被编辑或执行, 暂不能修改', 'danger');
+        showToast('该Test Cases正在被编辑或执行, 暂不能修改', 'danger');
         return;
       }
       if (!res.ok) {
@@ -10026,7 +10026,7 @@ const ReviewEdit = (function() {
       const result = await res.json();
       hideLoading();
 
-      // 更新本地Cases据
+      // 更新本地Test Cases数据
       const data = projectData[currentProjectIdx];
       if (data && data.testcases) {
         const caseItem = data.testcases.cases.find(c => c._dbId === _editBuffer._dbId || c._id === _editBuffer._dbId);
@@ -10050,7 +10050,7 @@ const ReviewEdit = (function() {
       const savedDbId = _editBuffer._dbId;
       closeEditDrawer(true);
 
-      // 刷新用例列表
+      // 刷新Test Cases列表
       refreshProjectContent();
 
       // 显示保存后反馈
@@ -10058,7 +10058,7 @@ const ReviewEdit = (function() {
 
     } catch (err) {
       hideLoading();
-      console.error('保存用例Failed:', err);
+      console.error('保存Test CasesFailed:', err);
       showToast('保存Failed, 请检查网络后重试', 'danger');
     }
   }
@@ -10081,7 +10081,7 @@ const ReviewEdit = (function() {
     toast.innerHTML = `
       <style>@keyframes slideInToast{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}</style>
       <span>&#10003; ${msg}</span>
-      ${canRecheck ? `<button class="toast-action-btn" onclick="ReviewEdit.handleReReview(${caseDbId})">重新评审此用例</button>` : ''}
+      ${canRecheck ? `<button class="toast-action-btn" onclick="ReviewEdit.handleReReview(${caseDbId})">重新评审此Test Cases</button>` : ''}
     `;
     document.body.appendChild(toast);
 
@@ -10303,6 +10303,7 @@ const ReviewEdit = (function() {
 </script>
 </body>
 </html>
+
 
 
 
